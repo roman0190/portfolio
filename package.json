@@ -2,8 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "main":"page.js",
-  "homepage": "./",
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -12,7 +12,7 @@ const HeroSection = () => {
             <div className="col-span-5 place-self-center sm:-mt-20 mt-4 lg:mt-0"> 
                 <div className="rounded-full bg-gray-600/10 w-[250px] h-[250px] lg:w-[350px] lg:h-[350px] sm:w-[200px] sm:h-[200px] relative ">
                     <Image
-                    src = "/image/dum.png"
+                    src = "./image/dum.png"
                     alt ="img Not Uploaded"
                     className=" absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full w-[250px] h-[250px] lg:w-[350px] lg:h-[350px] sm:w-[200px] sm:h-[200px] object-cover "
                     width ={500}

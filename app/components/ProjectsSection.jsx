@@ -17,9 +17,9 @@ const ProjectsData = [
   },
   {
     id: 2,
-    title: "Next Portfolio Website",
-    description: "Project 2 description",
-    image: "./image/projects/2.jpg",
+    title: "Talent Trades",
+    description: "Talent Trades aims to develop a web-based platform similar to Fiverr, facilitating transactions between service providers (sellers) and service seekers (buyers). The platform will offer features for user registration, gig creation, order placement, real-time messaging, payment processing, and moderation.",
+    image: "./image/projects/2.png",
     tag: ["All", "Web"],
     gitUrl:"/",
     previewUrl:"/",
@@ -27,8 +27,8 @@ const ProjectsData = [
   },
   {
     id: 3,
-    title: "Next Portfolio Website",
-    description: "Project 3 description",
+    title: "Chat App",
+    description: "The Messaging Application is a real-time communication platform designed to facilitate seamless and instant messaging between users. Developed using Nest.js for the backend and Next.js for the frontend, this application leverages modern web technologies to provide a responsive and feature-rich messaging experience.",
     image: "./image/projects/3.jpg",
     tag: ["All", "Web"],
     gitUrl:"/",

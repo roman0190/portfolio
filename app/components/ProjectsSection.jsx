@@ -8,9 +8,9 @@ import { animate, motion ,useInView } from 'framer-motion'
 const ProjectsData = [
   {
     id: 1,
-    title: "Next Portfolio Website",
-    description: "Project 1 description",
-    image: "./image/projects/1.jpg",
+    title: "File Uploader",
+    description: "The File Uploader Web Application is a robust and user-friendly platform designed for efficient file management. Built with Next.js, this application allows users to upload, manage, and download files securely and conveniently. The application is designed with a clean and intuitive interface, making it accessible for users of all technical levels.",
+    image: "./image/projects/1.png",
     tag: ["All","Web"],
     gitUrl:"/",
     previewUrl:"/",

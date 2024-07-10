@@ -37,8 +37,8 @@ const ProjectsData = [
   {
     id: 4,
     title: "Portfolio",
-    description: "This Website Build with Nextjs and Tailwind Css",
-    image: "./image/projects/4.jpg",
+    description: "I built my portfolio website using Next.js and Tailwind CSS to showcase my skills and projects in a sleek and modern way. The site features sections for Home, About, Projects, Contacts, and CV. It provides an engaging overview of my background, highlights my diverse projects, offers easy ways to get in touch, and includes a downloadable version of my CV. The design is fully responsive, ensuring a seamless experience across all devices.",
+    image: "./image/projects/4.png",
     tag: ["All", "Web"],
     gitUrl:"/",
     previewUrl:"/",

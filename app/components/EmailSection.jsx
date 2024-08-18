@@ -2,15 +2,17 @@
 import React, { useState } from 'react'
 
 const EmailSection = () => {
-    const [sent, setSent] = useState(false)
-    const [error, setError] = useState(null)
+    const [sent, setSent] = useState(false);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+        setLoading(true); // Set loading state to true
+
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData.entries());
-    
+
         try {
             const response = await fetch("https://script.google.com/macros/s/AKfycbz10O-4iz3iGzZXM5iFdB4yCoZU_wmQnW4rghVpF-zM1d4XoODi9q2sSfu6M1s-qHB-/exec", {
                 method: 'POST',
@@ -18,16 +20,14 @@ const EmailSection = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                mode: 'no-cors' // Adding no-cors mode
+                mode: 'no-cors'
             });
-    
-            // Since no-cors mode doesn't return the actual response, you can't check response.ok or response status.
-            // Assume success for now
-            setSent(true); // Shows success message
-            
+
+            setSent(true);
+            setLoading(false); // Set loading state to false
         } catch (error) {
-            // Catching errors during the fetch operation
             setError('An error occurred. Please try again later.');
+            setLoading(false); // Set loading state to false
         }
     };
 
@@ -52,7 +52,9 @@ const EmailSection = () => {
                     <label htmlFor="message" className='text-white block mt-4 text-sm font-medium'>Message</label>
                     <textarea name="message" id="message" required placeholder="Let's Talk about......" className='bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5' />
 
-                    <button type='submit' className='bg-green-500 hover:bg-green-600 text-white font-medium py-2.5 px-5 rounded-lg w-full mt-2'>Send Email</button>
+                    <button type='submit' disabled={loading} className='bg-green-500 hover:bg-green-600 text-white font-medium py-2.5 px-5 rounded-lg w-full mt-2'>
+                        {loading ? 'Sending...' : 'Send Email'}
+                    </button>
 
                     {sent && <p className='text-green-500 mt-4'>Message sent successfully!</p>}
                     {error && <p className='text-red-500 mt-4'>{error}</p>}
@@ -62,4 +64,4 @@ const EmailSection = () => {
     )
 }
 
-export default EmailSection
+export default EmailSection;

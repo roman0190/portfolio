@@ -12,7 +12,7 @@ const EmailSection = () => {
         const data = Object.fromEntries(formData.entries());
     
         try {
-            const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL, {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbz10O-4iz3iGzZXM5iFdB4yCoZU_wmQnW4rghVpF-zM1d4XoODi9q2sSfu6M1s-qHB-/exec", {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {

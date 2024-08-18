@@ -32,7 +32,7 @@ const ProjectsData = [
     image: "./image/projects/3.png",
     tag: ["All", "Web"],
     gitUrl:"https://github.com/roman0190/Chat-app-FE-Nextjs.git",
-    previewUrl:"/",
+    previewUrl:"https://chat-app-nextjs-firebase-ecru.vercel.app/",
   },
   {
     id: 4,

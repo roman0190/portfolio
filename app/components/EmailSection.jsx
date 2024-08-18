@@ -28,7 +28,7 @@ const EmailSection = () => {
                 setError('Failed to send message. Please try again later.')
             }
         } catch (error) {
-            setError('An error occurred. Please try again later.')
+            setError(error)
         }
     }
 

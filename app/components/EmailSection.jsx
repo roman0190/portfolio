@@ -23,11 +23,22 @@ const EmailSection = () => {
                 mode: 'no-cors'
             });
 
+            // Since no-cors mode doesn't return the actual response, you can't check response.ok or response status.
+            // Assume success for now
             setSent(true);
             setLoading(false); // Set loading state to false
+
+            setTimeout(() => {
+                setSent(false);
+            }, 1000); // Hide success message after 1 second
+
         } catch (error) {
             setError('An error occurred. Please try again later.');
             setLoading(false); // Set loading state to false
+
+            setTimeout(() => {
+                setError(null);
+            }, 1000); // Hide error message after 1 second
         }
     };
 
@@ -52,7 +63,11 @@ const EmailSection = () => {
                     <label htmlFor="message" className='text-white block mt-4 text-sm font-medium'>Message</label>
                     <textarea name="message" id="message" required placeholder="Let's Talk about......" className='bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5' />
 
-                    <button type='submit' disabled={loading} className='bg-green-500 hover:bg-green-600 text-white font-medium py-2.5 px-5 rounded-lg w-full mt-2'>
+                    <button 
+                        type='submit' 
+                        disabled={loading} 
+                        className={`text-white font-medium py-2.5 px-5 rounded-lg w-full mt-2 ${loading ? 'bg-gray-500 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'}`}
+                    >
                         {loading ? 'Sending...' : 'Send Email'}
                     </button>
 

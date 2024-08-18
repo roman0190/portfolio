@@ -13,7 +13,7 @@ const ProjectsData = [
     image: "./image/projects/1.png",
     tag: ["All","Web"],
     gitUrl:"https://github.com/roman0190/file_uploader.git",
-    previewUrl:"https://github.com/roman0190/file_uploader.git",
+    previewUrl:"https://file-uploader-lovat.vercel.app/",
   },
   {
     id: 2,

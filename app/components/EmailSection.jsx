@@ -14,7 +14,7 @@ const EmailSection = () => {
         const data = Object.fromEntries(formData.entries())
 
         try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbwLLvLVYQw1OpiEhq73qLeE4aYRBCHdg3GhFoxA7vCkH6swB-8Di7Oo3lL6-woZvmey/exec", {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbz10O-4iz3iGzZXM5iFdB4yCoZU_wmQnW4rghVpF-zM1d4XoODi9q2sSfu6M1s-qHB-/exec", {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {

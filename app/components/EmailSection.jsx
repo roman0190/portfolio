@@ -6,31 +6,30 @@ const EmailSection = () => {
     const [error, setError] = useState(null)
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        setSent(false)
-        setError(null)
-
-        const formData = new FormData(e.target)
-        const data = Object.fromEntries(formData.entries())
-
+        e.preventDefault();
+    
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+    
         try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbz10O-4iz3iGzZXM5iFdB4yCoZU_wmQnW4rghVpF-zM1d4XoODi9q2sSfu6M1s-qHB-/exec", {
+            const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-
-            if (response.ok) {
-                setSent(true)
-            } else {
-                setError('Failed to send message. Please try again later.')
-            }
+                    'Content-Type': 'application/json',
+                },
+                mode: 'no-cors' // Adding no-cors mode
+            });
+    
+            // Since no-cors mode doesn't return the actual response, you can't check response.ok or response status.
+            // Assume success for now
+            setSent(true); // Shows success message
+            
         } catch (error) {
-            setError(error)
+            // Catching errors during the fetch operation
+            setError('An error occurred. Please try again later.');
         }
-    }
+    };
 
     return (
         <section className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 font-mono'>  

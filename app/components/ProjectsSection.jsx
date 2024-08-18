@@ -28,7 +28,7 @@ const ProjectsData = [
   {
     id: 3,
     title: "Chat App",
-    description: "The Messaging Application is a real-time communication platform designed to facilitate seamless and instant messaging between users. Developed using Nest.js for the backend and Next.js for the frontend, this application leverages modern web technologies to provide a responsive and feature-rich messaging experience.",
+    description: "The Messaging Application is a real-time communication platform designed to facilitate seamless and instant messaging between users. Developed using Firebase for the backend and Next.js for the frontend, this application leverages modern web technologies to provide a responsive and feature-rich messaging experience.",
     image: "./image/projects/3.png",
     tag: ["All", "Web"],
     gitUrl:"https://github.com/roman0190/chat-app-nextjs-firebase-.git",

@@ -51,16 +51,18 @@ const ProjectsData = [
     tag: ["All", "Web"],
     gitUrl:"/",
     previewUrl:"/",
+
+
   },
-  // {
-  //   id: 6,
-  //   title: "Next Portfolio Website",
-  //   description: "Project 6 description",
-  //   image: "./image/projects/6.jpg",
-  //   tag: ["All", "Mobile"],
-  //   gitUrl:"/",
-  //   previewUrl:"/",
-  // },
+  {
+    id: 6,
+    title: "Weather",
+    description: "This is my second practice Flutter app, which focuses on displaying current weather and forecast information. The app is designed using Material Design principles and is built to work seamlessly across multiple platforms, providing a consistent and responsive user experience.",
+    image: "./image/projects/6.png",
+    tag: ["All", "Mobile"],
+    gitUrl:"https://github.com/roman0190/weather_app.git",
+    previewUrl:"/",
+  },
   // {
   //   id: 7,
   //   title: "Next Portfolio Website",

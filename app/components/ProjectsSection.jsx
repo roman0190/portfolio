@@ -63,15 +63,15 @@ const ProjectsData = [
     gitUrl:"https://github.com/roman0190/weather_app.git",
     previewUrl:"/",
   },
-  // {
-  //   id: 7,
-  //   title: "Next Portfolio Website",
-  //   description: "Project 7 description",
-  //   image: "./image/projects/7.jpg",
-  //   tag: ["All", "Mobile"],
-  //   gitUrl:"/",
-  //   previewUrl:"/",
-  // },
+  {
+    id: 7,
+    title: "ToDo",
+    description: "The To-Do App is a Flutter application with Firebase integration for real-time task management. It allows users to view, add, and edit tasks with due times. Tasks are synchronized across devices, ensuring your to-do list is always up-to-date",
+    image: "./image/projects/7.jpg",
+    tag: ["All", "Mobile"],
+    gitUrl:"https://github.com/roman0190/to_do_app_firebase",
+    previewUrl:"https://github.com/roman0190/to_do_app_firebase",
+  },
 ]
 
 const ProjectsSection = () => {

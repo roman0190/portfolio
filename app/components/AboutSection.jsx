@@ -14,6 +14,7 @@ const TabData = [
         <li>React</li>
         <li>NestJS</li>
         <li>Next.js</li>
+        <li>Flutter</li>
         <li>Firebase</li>
         <li>pgAdmin</li>
         <li>GitHub</li>

@@ -30,6 +30,8 @@ const HeroSection = () => {
                         3000,
                         'Full-stack developer',
                         2000,
+                        'Flutter developer',
+                        2000,
                     ]}
                     wrapper="span"
                     speed={1}
@@ -37,13 +39,13 @@ const HeroSection = () => {
                 />
                 </h1>
                 <p className='text-white/45 text-base sm:text-sm mb-6 lg:text-xl'>Hey, I'm Roman. I'm primarily a full stack developer working with technologies like NestJS, Next.js, Firebase, and pgAdmin. Currently, I'm in a learning phase, but I really enjoy development-related work and find it very fulfilling. You can learn more about me in the About section.
-
-
                 </p>
                 <div>
                     <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-gray-500 to-green-500  text-white hover:bg-slate-200'><a href="mailto:romanhowladar841@gmail.com">Hire Me</a></button>
                     <button className='px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-gray-500 via-blue-500 to-green-500  hover:bg-slate-800 text-white mt-3'>
-                        <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'>Download CV</span>
+                    <a href="/file/Roman Howladar's Resume [Internship].pdf" download className="block bg-[#121212] hover:bg-slate-800 text-white rounded-full px-5 py-2">
+                    Download CV
+                    </a>
                     </button>
                 </div>
             </div>

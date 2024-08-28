@@ -31,3 +31,45 @@ body {
     text-wrap: balance;
   }
 }
+/* globals.css */
+
+/* Keep the default cursor visible */
+body {
+  cursor: default;
+}
+
+/* Custom circle following the cursor */
+.custom-cursor {
+  position: fixed;
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+  border: 2px solid rgba(0, 0, 255, 0.7); /* Light blue border */
+  border-radius: 50%;
+  pointer-events: none; /* Ensure the cursor does not block interactions */
+  transform: translate(-50%, -50%); /* Center the cursor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease, height 0.3s ease, border-width 0.3s ease; /* Smooth transitions */
+  z-index: 1000; /* Ensure the cursor is on top of most elements */
+}
+
+/* Text inside the circle */
+.click-text {
+  color: rgba(0, 0, 255, 0.7); /* Light blue color */
+  font-size: 12px;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, font-size 0.3s ease; /* Smooth transitions */
+}
+
+/* Increase size and show text when hovering over clickable elements */
+.custom-cursor.hovered {
+  width: 50px; /* Increase size on hover */
+  height: 50px; /* Increase size on hover */
+  border-width: 3px; /* Increased border width */
+}
+
+.custom-cursor.hovered .click-text {
+  opacity: 1;
+  font-size: 16px; /* Increased text size */
+}

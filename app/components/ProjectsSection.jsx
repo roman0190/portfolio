@@ -72,6 +72,16 @@ const ProjectsData = [
     gitUrl:"https://github.com/roman0190/to_do_app_firebase",
     previewUrl:"https://github.com/roman0190/to_do_app_firebase",
   },
+
+  {
+    id: 8,
+    title: "FurniFlex",
+    description: "The FurniFlex is a E-commarce web-app with Nestjs and Tailwind Css",
+    image: "./image/projects/8.png",
+    tag: ["All", "Web"],
+    gitUrl:"https://github.com/roman0190/Akij_e-commarce-webapp-FE.git",
+    previewUrl:"https://github.com/roman0190/Akij_e-commarce-webapp-FE.git",
+  },
 ]
 
 const ProjectsSection = () => {

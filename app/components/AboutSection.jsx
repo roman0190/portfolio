@@ -8,16 +8,11 @@ const TabData = [
     id: "skills",
     content: (
       <ul className='list-disc pl-4 '>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>NestJS</li>
-        <li>Next.js</li>
-        <li>Flutter</li>
-        <li>Firebase</li>
-        <li>pgAdmin</li>
-        <li>GitHub</li>
+        <li>•<b>Frontend:</b> TypeScript, React, Next js, Tailwind CSS, Material UI</li>
+        <li>•<b>Backend:</b> Nest js, Express js, .Net framework with C#, Dart</li>
+        <li>•<b>Mobile App:</b> React Native, Flutter</li>
+        <li>•<b>DB:</b> Firebase, PostgreSQL, MySQL, MSSQL</li>
+        <li>•<b>Tools:</b> Git, Visual Studio, VS Code, Docker, Selenium</li>
       </ul>
     )
   },

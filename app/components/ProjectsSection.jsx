@@ -7,7 +7,7 @@ import { animate, motion ,useInView } from 'framer-motion'
 
 const ProjectsData = [
   {
-    id: 1,
+    id: 8,
     title: "File Uploader",
     description: "The File Uploader Web Application is a robust and user-friendly platform designed for efficient file management. Built with Next.js, this application allows users to upload, manage, and download files securely and conveniently. The application is designed with a clean and intuitive interface, making it accessible for users of all technical levels.",
     image: "./image/projects/1.png",
@@ -74,7 +74,7 @@ const ProjectsData = [
   },
 
   {
-    id: 8,
+    id: 1,
     title: "FurniFlex",
     description: "The FurniFlex is a E-commarce web-app with Nestjs and Tailwind Css",
     image: "./image/projects/8.png",

@@ -7,13 +7,13 @@ import { animate, motion ,useInView } from 'framer-motion'
 
 const ProjectsData = [
   {
-    id: 8,
-    title: "File Uploader",
-    description: "The File Uploader Web Application is a robust and user-friendly platform designed for efficient file management. Built with Next.js, this application allows users to upload, manage, and download files securely and conveniently. The application is designed with a clean and intuitive interface, making it accessible for users of all technical levels.",
-    image: "./image/projects/1.png",
-    tag: ["All","Web"],
-    gitUrl:"https://github.com/roman0190/file_uploader.git",
-    previewUrl:"https://file-uploader-lovat.vercel.app/",
+    id: 1,
+    title: "FurniFlex",
+    description: "The FurniFlex is a E-commarce web-app with Nestjs and Tailwind Css",
+    image: "./image/projects/8.png",
+    tag: ["All", "Web"],
+    gitUrl:"https://github.com/roman0190/Akij_e-commarce-webapp-FE.git",
+    previewUrl:"https://github.com/roman0190/Akij_e-commarce-webapp-FE.git",
   },
   {
     id: 2,
@@ -51,8 +51,8 @@ const ProjectsData = [
     tag: ["All", "Web"],
     gitUrl:"/",
     previewUrl:"/",
-
-
+    
+    
   },
   {
     id: 6,
@@ -72,20 +72,20 @@ const ProjectsData = [
     gitUrl:"https://github.com/roman0190/to_do_app_firebase",
     previewUrl:"https://github.com/roman0190/to_do_app_firebase",
   },
-
   {
-    id: 1,
-    title: "FurniFlex",
-    description: "The FurniFlex is a E-commarce web-app with Nestjs and Tailwind Css",
-    image: "./image/projects/8.png",
-    tag: ["All", "Web"],
-    gitUrl:"https://github.com/roman0190/Akij_e-commarce-webapp-FE.git",
-    previewUrl:"https://github.com/roman0190/Akij_e-commarce-webapp-FE.git",
+    id: 8,
+    title: "File Uploader",
+    description: "The File Uploader Web Application is a robust and user-friendly platform designed for efficient file management. Built with Next.js, this application allows users to upload, manage, and download files securely and conveniently. The application is designed with a clean and intuitive interface, making it accessible for users of all technical levels.",
+    image: "./image/projects/1.png",
+    tag: ["All","Web"],
+    gitUrl:"https://github.com/roman0190/file_uploader.git",
+    previewUrl:"https://file-uploader-lovat.vercel.app/",
   },
+  
 ]
 
 const ProjectsSection = () => {
-
+  
   const[tag,setTag] = useState("All")
   const ref = useRef(null);
   const isInView = useInView(ref, {once:true})

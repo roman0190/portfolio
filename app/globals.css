@@ -31,3 +31,15 @@ body {
     text-wrap: balance;
   }
 }
+/* styles/globals.css or a specific CSS file */
+/* Blurred Dot Styles */
+.blur-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  filter: blur(2px);
+  transition: background 2.5s ease; /* Smooth color transition */
+  justify-items: center;
+  align-items: center;
+}

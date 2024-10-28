@@ -9,7 +9,7 @@ const ProjectsData = [
     id: 0,
     title: "PromtIt",
     description:
-      "PromtIt is a web application that generates stunning images from text prompts using the Korci API. Built with Next.js and styled with Ant Design, it features a user-friendly interface, real-time image generation, and downloadable visuals. With its dynamic background and modern design, PromtIt makes creative expression accessible to everyone.",
+      "PromtIt is a web application that generates stunning images from text prompts using the Pollinations API. Built with Next.js and styled with Ant Design, it features a user-friendly interface, real-time image generation, and downloadable visuals. With its dynamic background and modern design, PromtIt makes creative expression accessible to everyone.",
     image: "./image/projects/9.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/roman0190/text-to-image-ai.git",

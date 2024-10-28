@@ -22,8 +22,8 @@ const ProjectsData = [
       "The FurniFlex is a E-commarce web-app with Nestjs and Tailwind Css",
     image: "./image/projects/8.png",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/roman0190/Akij_e-commarce-webapp-FE.git",
-    previewUrl: "https://github.com/roman0190/Akij_e-commarce-webapp-FE.git",
+    gitUrl: "https://github.com/roman0190/FurniFlex-FE",
+    previewUrl: "https://github.com/roman0190/FurniFlex-FE",
   },
   {
     id: 2,

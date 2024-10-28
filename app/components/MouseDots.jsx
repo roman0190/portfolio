@@ -79,7 +79,7 @@ const MouseDots = () => {
   }, []);
 
   return (
-    <div className="md:block md:fixed hidden md:inset-0 md:pointer-events-none">
+    <div className="md:block md:fixed hidden md:inset-0 md:pointer-events-none z-50">
       {/* Background Dots */}
       {dots.map((dot, index) => {
         // Calculate the distance from the mouse position

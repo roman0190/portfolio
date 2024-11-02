@@ -7,6 +7,16 @@ import { animate, motion, useInView } from "framer-motion";
 const ProjectsData = [
   {
     id: 0,
+    title: "EduForge: Your AI Writing Assistant for Academic Excellence",
+    description:
+      "EduForge is designed as an intelligent platform to help students tackle academic writing effortlessly. Built with cutting-edge technologies like Next.js for dynamic page rendering, Tailwind CSS for modern, responsive design, and a PostgreSQL database for efficient data handling, EduForge is fast and user-friendly. Its AI-driven backend, powered by the OpenAI API, generates personalized writing samples across a variety of academic formats—such as paragraphs, reports, applications, and more. With a streamlined and intuitive interface featuring Ant Design components, EduForge ensures students have an easy, productive, and engaging experience.",
+    image: "./image/projects/10.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/roman0190/eduforge-ai",
+    previewUrl: "https://eduforge-ai.vercel.app/",
+  },
+  {
+    id: 1,
     title: "PromtIt",
     description:
       "PromtIt is a web application that generates stunning images from text prompts using the Pollinations API. Built with Next.js and styled with Ant Design, it features a user-friendly interface, real-time image generation, and downloadable visuals. With its dynamic background and modern design, PromtIt makes creative expression accessible to everyone.",
@@ -16,7 +26,7 @@ const ProjectsData = [
     previewUrl: "https://text-to-image-ai-one.vercel.app/",
   },
   {
-    id: 1,
+    id: 2,
     title: "FurniFlex",
     description:
       "The FurniFlex is a E-commarce web-app with Nestjs and Tailwind Css",
@@ -26,7 +36,7 @@ const ProjectsData = [
     previewUrl: "https://github.com/roman0190/FurniFlex-FE",
   },
   {
-    id: 2,
+    id: 3,
     title: "Talent Trades",
     description:
       "Talent Trades aims to develop a web-based platform similar to Fiverr, facilitating transactions between service providers (sellers) and service seekers (buyers). The platform will offer features for user registration, gig creation, order placement, real-time messaging, payment processing, and moderation.",
@@ -36,7 +46,7 @@ const ProjectsData = [
     previewUrl: "https://github.com/roman0190/talent-trades-FE.git",
   },
   {
-    id: 3,
+    id: 4,
     title: "Chat App",
     description:
       "The Messaging Application is a real-time communication platform designed to facilitate seamless and instant messaging between users. Developed using Firebase for the backend and Next.js for the frontend, this application leverages modern web technologies to provide a responsive and feature-rich messaging experience.",
@@ -46,7 +56,7 @@ const ProjectsData = [
     previewUrl: "https://chat-app-nextjs-firebase-ecru.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "Portfolio",
     description:
       "I built my portfolio website using Next.js and Tailwind CSS to showcase my skills and projects in a sleek and modern way. The site features sections for Home, About, Projects, Contacts, and CV. It provides an engaging overview of my background, highlights my diverse projects, offers easy ways to get in touch, and includes a downloadable version of my CV. The design is fully responsive, ensuring a seamless experience across all devices.",
@@ -56,7 +66,7 @@ const ProjectsData = [
     previewUrl: "/",
   },
   {
-    id: 5,
+    id: 6,
     title: "MAAR-ket",
     description:
       "'The Super Shop Management (MAAR-ket)' system, developed using C# and .NET, is a comprehensive tool designed to streamline shop operations. Key features include inventory management, sales tracking, a chatting system, purchase history tracking, and a cart feature, making it an efficient solution for managing retail businesses.",
@@ -66,7 +76,7 @@ const ProjectsData = [
     previewUrl: "/",
   },
   {
-    id: 6,
+    id: 7,
     title: "Weather",
     description:
       "This is my second practice Flutter app, which focuses on displaying current weather and forecast information. The app is designed using Material Design principles and is built to work seamlessly across multiple platforms, providing a consistent and responsive user experience.",
@@ -76,7 +86,7 @@ const ProjectsData = [
     previewUrl: "/",
   },
   {
-    id: 7,
+    id: 8,
     title: "ToDo",
     description:
       "The To-Do App is a Flutter application with Firebase integration for real-time task management. It allows users to view, add, and edit tasks with due times. Tasks are synchronized across devices, ensuring your to-do list is always up-to-date",
@@ -86,7 +96,7 @@ const ProjectsData = [
     previewUrl: "https://github.com/roman0190/to_do_app_firebase",
   },
   {
-    id: 8,
+    id: 9,
     title: "File Uploader",
     description:
       "The File Uploader Web Application is a robust and user-friendly platform designed for efficient file management. Built with Next.js, this application allows users to upload, manage, and download files securely and conveniently. The application is designed with a clean and intuitive interface, making it accessible for users of all technical levels.",

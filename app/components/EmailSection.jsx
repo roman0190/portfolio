@@ -1,82 +1,109 @@
-"use client"
-import React, { useState } from 'react'
+"use client";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const EmailSection = () => {
-    const [sent, setSent] = useState(false);
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(false);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, threshold: 0.1 });
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setLoading(true); // Set loading state to true
+  return (
+    <section
+      ref={sectionRef}
+      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 font-mono"
+    >
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={isInView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+      >
+        <h5 className="text-xl font-bold text-white my-2">Let{"'"}s Contact</h5>
+        <p className="text-white/45 mb-4 max-w-md">
+          If you're interested in collaborating with me, I'd love to hear from
+          you! You can reach out through LinkedIn or GitHub, or simply send me
+          an email using the form in the contact section. I'm always excited to
+          connect with fellow developers and explore new opportunities. Looking
+          forward to hearing from you soon. Have a fantastic day!
+        </p>
+        <div className="socials flex flex-row gap-2">
+          <a
+            className="rounded-full border p-2 hover:text-green-400 hover:border-green-400"
+            href="https://github.com/roman0190"
+          >
+            Github
+          </a>
+          <a
+            className="rounded-full border p-2 hover:text-green-400 hover:border-green-400"
+            href="https://www.linkedin.com/in/roman-howladar-4a576123a/"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
+      >
+        <form className="flex flex-col">
+          <label
+            htmlFor="email"
+            className="text-white block mt-4 text-sm font-medium"
+          >
+            Your Email
+          </label>
+          <motion.input
+            name="email"
+            type="email"
+            id="email"
+            required
+            placeholder="example@gmail.com"
+            className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+            whileFocus={{ scale: 1.05 }}
+          />
 
-        const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData.entries());
+          <label
+            htmlFor="subject"
+            className="text-white block mt-4 text-sm font-medium"
+          >
+            Subject
+          </label>
+          <motion.input
+            name="subject"
+            type="text"
+            id="subject"
+            required
+            placeholder="Just Saying Hi...."
+            className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+            whileFocus={{ scale: 1.05 }}
+          />
 
-        try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbz10O-4iz3iGzZXM5iFdB4yCoZU_wmQnW4rghVpF-zM1d4XoODi9q2sSfu6M1s-qHB-/exec", {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                mode: 'no-cors'
-            });
+          <label
+            htmlFor="message"
+            className="text-white block mt-4 text-sm font-medium"
+          >
+            Message
+          </label>
+          <motion.textarea
+            name="message"
+            id="message"
+            required
+            placeholder="Let's Talk about......"
+            className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+            whileFocus={{ scale: 1.05 }}
+          />
 
-            // Since no-cors mode doesn't return the actual response, you can't check response.ok or response status.
-            // Assume success for now
-            setSent(true);
-            setLoading(false); // Set loading state to false
-
-            setTimeout(() => {
-                setSent(false);
-            }, 1000); // Hide success message after 1 second
-
-        } catch (error) {
-            setError('An error occurred. Please try again later.');
-            setLoading(false); // Set loading state to false
-
-            setTimeout(() => {
-                setError(null);
-            }, 1000); // Hide error message after 1 second
-        }
-    };
-
-    return (
-        <section className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 font-mono'>  
-            <div>
-                <h5 className='text-xl font-bold text-white my-2'>Let{"'"}s Contact</h5>
-                <p className='text-white/45 mb-4 max-w-md'>If you're interested in collaborating with me, I'd love to hear from you! You can reach out through LinkedIn or GitHub, or simply send me an email using the form in the contact section. I'm always excited to connect with fellow developers and explore new opportunities. Looking forward to hearing from you soon. Have a fantastic day!</p>
-                <div className='socials flex flex-row gap-2'>
-                    <a className='rounded-full border p-2 hover:text-green-400 hover:border-green-400' href='https://github.com/roman0190'>Github</a>
-                    <a className='rounded-full border p-2 hover:text-green-400 hover:border-green-400' href='https://www.linkedin.com/in/roman-howladar-4a576123a/'>LinkedIn</a>
-                </div>
-            </div>
-            <div>
-                <form className="flex flex-col" onSubmit={handleSubmit}>
-                    <label htmlFor="email" className='text-white block mt-4 text-sm font-medium'>Your Email</label>
-                    <input name="email" type="email" id="email" required placeholder='example@gmail.com' className='bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5' />
-
-                    <label htmlFor="subject" className='text-white block mt-4 text-sm font-medium'>Subject</label>
-                    <input name="subject" type="text" id="subject" required placeholder='Just Saying Hi....' className='bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5' />
-
-                    <label htmlFor="message" className='text-white block mt-4 text-sm font-medium'>Message</label>
-                    <textarea name="message" id="message" required placeholder="Let's Talk about......" className='bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5' />
-
-                    <button 
-                        type='submit' 
-                        disabled={loading} 
-                        className={`text-white font-medium py-2.5 px-5 rounded-lg w-full mt-2 ${loading ? 'bg-gray-500 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'}`}
-                    >
-                        {loading ? 'Sending...' : 'Send Email'}
-                    </button>
-
-                    {sent && <p className='text-green-500 mt-4'>Message sent successfully!</p>}
-                    {error && <p className='text-red-500 mt-4'>{error}</p>}
-                </form>
-            </div>
-        </section>
-    )
-}
+          <motion.button
+            type="submit"
+            className="text-white font-medium py-2.5 px-5 rounded-lg w-full mt-2 bg-green-500 hover:bg-green-600"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Send Email
+          </motion.button>
+        </form>
+      </motion.div>
+    </section>
+  );
+};
 
 export default EmailSection;

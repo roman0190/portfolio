@@ -109,7 +109,7 @@ const AboutSection = () => {
         {/* Image Section */}
         <div className="flex-1 flex justify-center items-center">
           <Image
-            src="/image/about-img.jpeg"
+            src="./image/about-img.jpeg"
             width={500}
             height={500}
             alt="Profile Image"

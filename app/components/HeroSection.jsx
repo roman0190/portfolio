@@ -25,7 +25,7 @@ const HeroSection = () => {
 
             {/* Profile Image */}
             <Image
-              src="/image/dum.png"
+              src="./image/dum.png"
               alt="Profile Image"
               className="absolute inset-0 w-full h-full object-cover rounded-full"
               width={500}

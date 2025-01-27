@@ -25,11 +25,13 @@ const HeroSection = () => {
 
             {/* Profile Image */}
             <Image
-              src="./image/dum.png"
+              src="./image/dum.webp"  // Ensure image path is correct
               alt="Profile Image"
               className="absolute inset-0 w-full h-full object-cover rounded-full"
               width={500}
               height={500}
+              priority // Make it load faster
+              sizes="(max-width: 640px) 200px, (max-width: 1024px) 250px, 350px" // Responsively load different sizes
             />
           </motion.div>
         </div>

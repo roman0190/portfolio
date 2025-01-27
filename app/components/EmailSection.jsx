@@ -24,15 +24,15 @@ const EmailSection = () => {
           connect with fellow developers and explore new opportunities. Looking
           forward to hearing from you soon. Have a fantastic day!
         </p>
-        <div className="socials flex flex-row gap-2">
+        <div className="socials flex flex-row gap-2  text-green-400 ">
           <a
-            className="rounded-full border p-2 hover:text-green-400 hover:border-green-400"
+            className="rounded-full border p-2 hover:text-black hover:border-white border-green-400 shadow-lg bg-white"
             href="https://github.com/roman0190"
           >
             Github
           </a>
           <a
-            className="rounded-full border p-2 hover:text-green-400 hover:border-green-400"
+            className="rounded-full border p-2 hover:text-black hover:border-white border-green-400 shadow-lg bg-white"
             href="https://www.linkedin.com/in/roman-howladar-4a576123a/"
           >
             LinkedIn

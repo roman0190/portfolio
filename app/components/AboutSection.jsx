@@ -109,11 +109,13 @@ const AboutSection = () => {
         {/* Image Section */}
         <div className="flex-1 flex justify-center items-center">
           <Image
-            src="./image/about-img.jpeg"
+            src="/image/about-img.webp"  // Change to WebP format if available
             width={500}
             height={500}
             alt="Profile Image"
             className="object-cover w-full h-full rounded-md shadow-lg"
+            priority // Preload this image as it's above the fold
+            sizes="(max-width: 640px) 300px, (max-width: 1024px) 400px, 500px" // Responsively load different sizes
           />
         </div>
       </div>

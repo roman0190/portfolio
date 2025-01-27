@@ -16,6 +16,9 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
           width={1080}
           height={1080}
           className="w-full h-full object-contain rounded-t-xl"
+          priority={true} // Preload the image if it's above the fold
+          placeholder="blur" // Use blur-up effect until the image is fully loaded
+          blurDataURL={imgUrl} // Add a low-quality placeholder image URL
         />
         {/* Overlay */}
         <div className="overlay items-center justify-center absolute h-full w-full bg-slate-400 top-0 left-0 rounded-t-xl hidden bg-opacity-0 group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">

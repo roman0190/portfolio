@@ -6,6 +6,16 @@ import { animate, motion, useInView } from "framer-motion";
 
 const ProjectsData = [
   {
+    id: 10,
+    title: "Twitter/X Clone(Under Development)",
+    description:
+      "A Twitter/X clone built using Next.js, Tailwind CSS, and Unig, with ImageKit for storing post images and videos. The project is currently under development and will include features like user authentication, real-time posts, likes, comments, and a responsive UI.",
+    image: "./image/projects/12.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/roman0190/twitter-x-clone.git",
+    previewUrl: "https://twitter-x-clone-phi.vercel.app/",
+  },
+  {
     id: 0,
     title: "EduForge: Your AI Writing Assistant for Academic Excellence",
     description:
@@ -55,16 +65,27 @@ const ProjectsData = [
     gitUrl: "https://github.com/roman0190/chat-app-nextjs-firebase-.git",
     previewUrl: "https://chat-app-nextjs-firebase-ecru.vercel.app/",
   },
-  // {
-  //   id: 5,
-  //   title: "Portfolio",
-  //   description:
-  //     "I built my portfolio website using Next.js and Tailwind CSS to showcase my skills and projects in a sleek and modern way. The site features sections for Home, About, Projects, Contacts, and CV. It provides an engaging overview of my background, highlights my diverse projects, offers easy ways to get in touch, and includes a downloadable version of my CV. The design is fully responsive, ensuring a seamless experience across all devices.",
-  //   image: "./image/projects/4.png",
-  //   tag: ["All", "Web"],
-  //   gitUrl: "/",
-  //   previewUrl: "/",
-  // },
+  {
+    id: 5,
+    title: "AnyTech-Clone",
+    description:
+      "AnyTech-Clone is a modern digital landing page built using Next.js ,TailwindCss and Framer Motion. It features smooth animations, responsive design, and optimized performance for an engaging user experience.",
+    image: "./image/projects/11.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/roman0190/anyTech-clone.git",
+    previewUrl: "https://any-tech-clone.vercel.app/",
+  },
+  {
+    id: 9,
+    title: "File Uploader",
+    description:
+      "The File Uploader Web Application is a robust and user-friendly platform designed for efficient file management. Built with Next.js, this application allows users to upload, manage, and download files securely and conveniently. The application is designed with a clean and intuitive interface, making it accessible for users of all technical levels.",
+    image: "./image/projects/1.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/roman0190/file_uploader.git",
+    previewUrl: "https://file-uploader-lovat.vercel.app/",
+  },
+
   {
     id: 6,
     title: "MAAR-ket",
@@ -94,16 +115,6 @@ const ProjectsData = [
     tag: ["All", "Mobile"],
     gitUrl: "https://github.com/roman0190/to_do_app_firebase",
     previewUrl: "https://github.com/roman0190/to_do_app_firebase",
-  },
-  {
-    id: 9,
-    title: "File Uploader",
-    description:
-      "The File Uploader Web Application is a robust and user-friendly platform designed for efficient file management. Built with Next.js, this application allows users to upload, manage, and download files securely and conveniently. The application is designed with a clean and intuitive interface, making it accessible for users of all technical levels.",
-    image: "./image/projects/1.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/roman0190/file_uploader.git",
-    previewUrl: "https://file-uploader-lovat.vercel.app/",
   },
 ];
 

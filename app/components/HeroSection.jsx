@@ -60,7 +60,7 @@ const HeroSection = () => {
           </h1>
           <p className="text-white/70 text-base sm:text-lg lg:text-xl mb-6 leading-relaxed">
             Hey, I&#39;m Roman. I specialize in full-stack development using
-            technologies like NestJS, Next.js, Firebase, and pgAdmin. I am
+            technologies like NestJS, Next.js, Firebase, and pgSQL. I am
             passionate about coding, constantly learning, and ready to take on
             exciting projects. Explore more about me in the About section.
           </p>

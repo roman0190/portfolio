@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -27,14 +27,18 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
             aria-label={`View ${title} Code`}
             className="m-2 h-11 w-28 flex justify-center border-2 rounded-full border-[#0987e1] hover:border-white transition duration-300"
           >
-            <p className="text-[#0987e1] group-hover:text-white m-2">View Code</p>
+            <p className="text-[#0987e1] group-hover:text-white m-2">
+              View Code
+            </p>
           </Link>
           <Link
             href={previewUrl}
             aria-label={`Preview ${title} Site`}
             className="h-11 w-36 flex justify-center border-2 rounded-full border-[#0987e1] hover:border-white transition duration-300"
           >
-            <p className="text-[#0987e1] group-hover:text-white m-2">Preview Site</p>
+            <p className="text-[#0987e1] group-hover:text-white m-2">
+              Preview Site
+            </p>
           </Link>
         </div>
       </div>
@@ -57,7 +61,9 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
         <button
           className="text-blue-500 mt-2 hover:underline"
           onClick={() => setIsExpanded(!isExpanded)}
-          aria-label={isExpanded ? "Show Less Description" : "Show More Description"}
+          aria-label={
+            isExpanded ? "Show Less Description" : "Show More Description"
+          }
         >
           {isExpanded ? "Show Less" : "Show More"}
         </button>

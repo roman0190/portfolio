@@ -65,7 +65,7 @@ const TabData = [
         <p className="text-sm text-white/45">
           Worked as a junior developer on React Native Firebase app development
           projects.
-          <Link href="/https://www.refindz.io/" className="text-blue-500">
+          <Link href="https://www.refindz.io/" className="text-blue-500">
             Download
           </Link>
         </p>

@@ -49,7 +49,7 @@ const HeroSection = () => {
                 3000,
                 "Full-stack Developer",
                 2000,
-                "Flutter Developer",
+                "React Native Developer",
                 2000,
               ]}
               wrapper="span"

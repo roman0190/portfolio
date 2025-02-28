@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import TabButton from "./TabButton";
-
+import Link from "next/link";
 const TabData = [
   {
     title: "Skills",
@@ -14,7 +14,7 @@ const TabData = [
           <b>Frontend:</b> TypeScript, React, Next.js, Tailwind CSS, Material UI
         </li>
         <li>
-          <b>Backend:</b> Nest.js, Express.js, .NET framework with C#, Dart
+          <b>Backend:</b> Nest.js, .NET framework with C#,
         </li>
         <li>
           <b>Mobile App:</b> React Native, Flutter
@@ -34,13 +34,14 @@ const TabData = [
     content: (
       <ul className="list-disc pl-4">
         <li>
-          <b>SSC:</b> Al-Haz Aminuddin High School, Madaripur, Dhaka
+          <b>SSC:</b> Al-Haz Aminuddin High School, Madaripur, Dhaka -(2018)
         </li>
         <li>
-          <b>HSC:</b> Milestone College, Uttara, Dhaka
+          <b>HSC:</b> Milestone College, Uttara, Dhaka -(2020)
         </li>
         <li>
-          <b>B.Sc. in CSE:</b> American International University Bangladesh (AIUB), Dhaka
+          <b>B.Sc. in CSE:</b> American International University Bangladesh
+          (AIUB), Dhaka -(2025) 
         </li>
       </ul>
     ),
@@ -50,16 +51,23 @@ const TabData = [
     id: "experience",
     content: (
       <ul className="list-disc pl-4">
-        <li>Full Stack Developer</li>
+        <li>Learnd</li>
         <p className="text-sm text-white/45">
-          Developed four Computer Science course projects covering various topics such as web development, database management, and software engineering.
-          Utilized technologies including NestJS, Next.js, Firebase, and pgAdmin to create robust and scalable applications.
-          Collaborated with team members to design and implement features, ensuring project milestones were met on time.
-          Conducted thorough testing and debugging to maintain high-quality code standards.
+          Developed four Computer Science course projects covering various
+          topics such as web development, database management, and software
+          engineering. Utilized technologies including NestJS, Next.js,
+          Firebase, and pgAdmin to create robust and scalable applications.
+          Collaborated with team members to design and implement features,
+          ensuring project milestones were met on time. Conducted thorough
+          testing and debugging to maintain high-quality code standards.
         </p>
-        <li>Junior React Native Firebase App Developer</li>
+        <li>Jr. React Native Firebase App Developer</li>
         <p className="text-sm text-white/45">
-          Worked as a junior developer on React Native Firebase app development projects.
+          Worked as a junior developer on React Native Firebase app development
+          projects.
+          <Link href="/https://www.refindz.io/" className="text-blue-500">
+            Download
+          </Link>
         </p>
       </ul>
     ),
@@ -86,7 +94,10 @@ const AboutSection = () => {
         <div className="flex-1 text-left">
           <h2 className="text-4xl font-bold text-white mb-6">About Me</h2>
           <p className="text-white/70 lg:text-lg mb-8">
-            As a Full Stack Developer, I possess a diverse skill set that spans across both front-end and back-end development. My expertise enables me to handle all aspects of web development, from designing user interfaces to managing server-side logic and databases.
+            As a Full Stack Developer, I possess a diverse skill set that spans
+            across both front-end and back-end development. My expertise enables
+            me to handle all aspects of web development, from designing user
+            interfaces to managing server-side logic and databases.
           </p>
 
           <div className="flex gap-4 mb-6">
@@ -109,7 +120,7 @@ const AboutSection = () => {
         {/* Image Section */}
         <div className="flex-1 flex justify-center items-center">
           <Image
-            src="./image/about-img.webp"  // Change to WebP format if available
+            src="./image/about-img.webp" // Change to WebP format if available
             width={500}
             height={500}
             alt="Profile Image"

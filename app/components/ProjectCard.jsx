@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
+const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl,tag="Game" }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -31,13 +31,18 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
               View Code
             </p>
           </Link>
+
           <Link
             href={previewUrl}
-            aria-label={`Preview ${title} Site`}
+            aria-label={
+              tag.includes("Game")
+                ? `Watch ${title} Demo`
+                : `Preview ${title} Site`
+            }
             className="h-11 w-36 flex justify-center border-2 rounded-full border-[#0987e1] hover:border-white transition duration-300"
           >
             <p className="text-[#0987e1] group-hover:text-white m-2">
-              Preview Site
+              {tag.includes("Game") ? "Watch Demo" : "Preview Site"}
             </p>
           </Link>
         </div>

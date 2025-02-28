@@ -16,6 +16,16 @@ const ProjectsData = [
     previewUrl: "https://twitter-x-clone-phi.vercel.app/",
   },
   {
+    id: 2,
+    title: "FurniFlex",
+    description:
+      "FurniFlex is a full-stack e-commerce web app built with Next.js for the frontend and C#/.NET for the backend. It offers a fully functional, responsive shopping experience with features like product listings, user authentication, and a shopping cart.",
+    image: "./image/projects/8.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/roman0190/FurniFlex-FE",
+    previewUrl: "https://github.com/roman0190/FurniFlex-FE",
+  },
+  {
     id: 0,
     title: "EduForge: Your AI Writing Assistant for Academic Excellence",
     description:
@@ -35,16 +45,7 @@ const ProjectsData = [
     gitUrl: "https://github.com/roman0190/text-to-image-ai.git",
     previewUrl: "https://text-to-image-ai-one.vercel.app/",
   },
-  {
-    id: 2,
-    title: "FurniFlex",
-    description:
-      "The FurniFlex is a E-commarce web-app with Nestjs and Tailwind Css",
-    image: "./image/projects/8.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/roman0190/FurniFlex-FE",
-    previewUrl: "https://github.com/roman0190/FurniFlex-FE",
-  },
+
   {
     id: 3,
     title: "Talent Trades",
@@ -116,6 +117,16 @@ const ProjectsData = [
     gitUrl: "https://github.com/roman0190/to_do_app_firebase",
     previewUrl: "https://github.com/roman0190/to_do_app_firebase",
   },
+  {
+    id: 9,
+    title: "Open-World Game with Unity 6 (Basic)",
+    description:
+      "An open-world game built using Unity 6",
+    image: "./image/projects/13.png",
+    tag: ["All", "Game"],
+    gitUrl: "https://github.com/roman0190/unity_open_world/nai_khuijalav o nai",
+    previewUrl: "https://youtu.be/-zwNoTvkqOE",
+  },
 ];
 
 const ProjectsSection = () => {
@@ -154,6 +165,11 @@ const ProjectsSection = () => {
           onClick={handleTagChange}
           name={"Mobile"}
           isSelected={tag === "Mobile"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name={"Game"}
+          isSelected={tag === "Game"}
         />
       </div>
       <ul className="grid lg:grid-cols-3 gap-4 grid-cols-1  ">

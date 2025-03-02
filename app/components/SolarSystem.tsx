@@ -29,7 +29,7 @@ const SolarSystem = () => {
     const textureLoader = new THREE.TextureLoader();
 
     // Load the Sun Texture
-    const sunTexture = textureLoader.load("/textures/sun.jpg");
+    const sunTexture = textureLoader.load("./textures/sun.jpg");
 
     // 🌍 Planets Data (with texture file paths)
     const planets = [
@@ -37,7 +37,7 @@ const SolarSystem = () => {
         name: "Mercury",
         size: 0.4,
         distance: 5,
-        texture: "/textures/mercury.jpg", // Replace with the actual texture path
+        texture: "./textures/mercury.jpg", // Replace with the actual texture path
         speed: 0.001, // Slow down
         moons: [],
       },
@@ -45,7 +45,7 @@ const SolarSystem = () => {
         name: "Venus",
         size: 0.6,
         distance: 8,
-        texture: "/textures/venus.jpg",
+        texture: "./textures/venus.jpg",
         speed: 0.0008, // Slow down
         moons: [],
       },
@@ -53,7 +53,7 @@ const SolarSystem = () => {
         name: "Earth",
         size: 0.8,
         distance: 11,
-        texture: "/textures/earth.jpg",
+        texture: "./textures/earth.jpg",
         speed: 0.0015, // Slow down
         moons: [{ size: 0.2, distance: 1.5, speed: 0.002 }],
       },
@@ -61,7 +61,7 @@ const SolarSystem = () => {
         name: "Mars",
         size: 0.6,
         distance: 15,
-        texture: "/textures/mars.jpg",
+        texture: "./textures/mars.jpg",
         speed: 0.001, // Slow down
         moons: [{ size: 0.15, distance: 1, speed: 0.002 }],
       },
@@ -69,7 +69,7 @@ const SolarSystem = () => {
         name: "Jupiter",
         size: 1.5,
         distance: 20,
-        texture: "/textures/jupiter.jpg",
+        texture: "./textures/jupiter.jpg",
         speed: 0.0012, // Slow down
         moons: [{ size: 0.3, distance: 2, speed: 0.003 }],
       },
@@ -77,7 +77,7 @@ const SolarSystem = () => {
         name: "Saturn",
         size: 1.3,
         distance: 25,
-        texture: "/textures/saturn.jpg",
+        texture: "./textures/saturn.jpg",
         speed: 0.0014, // Slow down
         moons: [{ size: 0.25, distance: 1.8, speed: 0.003 }],
       },
@@ -85,7 +85,7 @@ const SolarSystem = () => {
         name: "Uranus",
         size: 1.1,
         distance: 30,
-        texture: "/textures/uranus.jpg",
+        texture: "./textures/uranus.jpg",
         speed: 0.001, // Slow down
         moons: [],
       },
@@ -93,7 +93,7 @@ const SolarSystem = () => {
         name: "Neptune",
         size: 1.0,
         distance: 35,
-        texture: "/textures/neptune.jpg",
+        texture: "./textures/neptune.jpg",
         speed: 0.0011, // Slow down
         moons: [{ size: 0.2, distance: 1.5, speed: 0.003 }],
       },

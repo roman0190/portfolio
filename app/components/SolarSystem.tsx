@@ -116,7 +116,7 @@ const SolarSystem = () => {
       // 🔹 Moons (with texture, similar approach)
       moonMeshes[planet.name] = [];
       planet.moons.forEach((moon) => {
-        const moonTexture = textureLoader.load("/textures/moon.jpg"); // Replace with moon texture
+        const moonTexture = textureLoader.load("./textures/moon.jpg"); // Replace with moon texture
         const moonMaterial = new THREE.MeshBasicMaterial({ map: moonTexture });
         const moonGeometry = new THREE.SphereGeometry(moon.size, 32, 32);
         const moonMesh = new THREE.Mesh(moonGeometry, moonMaterial);

@@ -146,7 +146,7 @@ const ProjectsSection = () => {
     project.tag.includes(tag)
   );
   return (
-    <div ref={ref} className="font-mono">
+    <div ref={ref} className="font-mono relative">
       <h1 className="flex text-4xl font-semibold justify-center pb-2">
         My Projects
       </h1>

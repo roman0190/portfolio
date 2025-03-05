@@ -6,13 +6,12 @@ import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import ProjectsSection from "./components/ProjectsSection";
 import { motion } from "framer-motion";
-import SolarSystem from "./components/SolarSystem";
 
 
 export default function Home() {
   return (
     <div>
-      <SolarSystem />
+      {/* <SolarSystem /> */}
       <div className="z-50">
         <motion.main className="flex min-h-screen flex-col ">
           <Navbar />

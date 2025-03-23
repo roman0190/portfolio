@@ -11,7 +11,6 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <div>
-      {/* <SolarSystem /> */}
       <div className="z-50">
         <motion.main className="flex min-h-screen flex-col ">
           <Navbar />

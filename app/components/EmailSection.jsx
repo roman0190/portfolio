@@ -1,107 +1,148 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import Link from "next/link";
+import { useTheme } from "../contexts/ThemeContext";
 
 const EmailSection = () => {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, threshold: 0.1 });
+  const { theme } = useTheme();
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Form submission logic here
+
+    setEmailSubmitted(true);
+    setIsSubmitting(false);
+  };
 
   return (
-    <section
-      ref={sectionRef}
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 font-mono relative"
-    >
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-      >
-        <h5 className="text-xl font-bold text-white my-2">Let{"'"}s Contact</h5>
-        <p className="text-white/45 mb-4 max-w-md">
-          If you're interested in collaborating with me, I'd love to hear from
-          you! You can reach out through LinkedIn or GitHub, or simply send me
-          an email using the form in the contact section. I'm always excited to
-          connect with fellow developers and explore new opportunities. Looking
-          forward to hearing from you soon. Have a fantastic day!
-        </p>
-        <div className="socials flex flex-row gap-2  text-green-400 ">
-          <a
-            className="rounded-full border p-2 hover:text-black hover:border-white border-green-400 shadow-lg bg-white"
-            href="https://github.com/roman0190"
-          >
-            Github
-          </a>
-          <a
-            className="rounded-full border p-2 hover:text-black hover:border-white border-green-400 shadow-lg bg-white"
-            href="https://www.linkedin.com/in/roman-howladar-4a576123a/"
-          >
-            LinkedIn
-          </a>
-        </div>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
-      >
-        <form className="flex flex-col">
-          <label
-            htmlFor="email"
-            className="text-white block mt-4 text-sm font-medium"
-          >
-            Your Email
-          </label>
-          <motion.input
-            name="email"
-            type="email"
-            id="email"
-            required
-            placeholder="example@gmail.com"
-            className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-            whileFocus={{ scale: 1.05 }}
-          />
-
-          <label
-            htmlFor="subject"
-            className="text-white block mt-4 text-sm font-medium"
-          >
-            Subject
-          </label>
-          <motion.input
-            name="subject"
-            type="text"
-            id="subject"
-            required
-            placeholder="Just Saying Hi...."
-            className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-            whileFocus={{ scale: 1.05 }}
-          />
-
-          <label
-            htmlFor="message"
-            className="text-white block mt-4 text-sm font-medium"
-          >
-            Message
-          </label>
-          <motion.textarea
-            name="message"
-            id="message"
-            required
-            placeholder="Let's Talk about......"
-            className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-            whileFocus={{ scale: 1.05 }}
-          />
-
-          <motion.button
-            type="submit"
-            className="text-white font-medium py-2.5 px-5 rounded-lg w-full mt-2 bg-green-500 hover:bg-green-600"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Send Email
-          </motion.button>
-        </form>
-      </motion.div>
+    <section id="contact" className="my-12 md:my-16 py-8 md:py-16">
+      <div className="grid md:grid-cols-2 gap-8 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="z-10"
+        >
+          <h2 className="text-4xl font-bold mb-4 text-black dark:text-white">
+            Let&apos;s Connect
+          </h2>
+          <p className="text-[#555] dark:text-[#aaa] mb-8 max-w-md">
+            I&apos;m currently looking for new opportunities. Whether you have a
+            question or just want to say hi, I&apos;ll try my best to get back
+            to you!
+          </p>
+          <div className="socials flex flex-row gap-4 mb-6">
+            <motion.a
+              whileHover={{ y: -3 }}
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+            >
+              <FaGithub className="text-xl text-gray-700 dark:text-gray-300" />
+            </motion.a>
+            <motion.a
+              whileHover={{ y: -3 }}
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+            >
+              <FaLinkedinIn className="text-xl text-gray-700 dark:text-gray-300" />
+            </motion.a>
+            <motion.a
+              whileHover={{ y: -3 }}
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+            >
+              <FaTwitter className="text-xl text-gray-700 dark:text-gray-300" />
+            </motion.a>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="z-10"
+        >
+          <form className="flex flex-col" onSubmit={handleSubmit}>
+            <div className="mb-6">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              >
+                Your email
+              </label>
+              <input
+                name="email"
+                type="email"
+                id="email"
+                required
+                placeholder="jacob@google.com"
+                className="w-full px-3 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="subject"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              >
+                Subject
+              </label>
+              <input
+                name="subject"
+                type="text"
+                id="subject"
+                required
+                placeholder="Just saying hi"
+                className="w-full px-3 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              >
+                Message
+              </label>
+              <textarea
+                name="message"
+                id="message"
+                required
+                rows={4}
+                placeholder="Let's talk about..."
+                className="w-full px-3 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <motion.button
+              type="submit"
+              disabled={isSubmitting}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-teal-400 text-white font-medium"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </motion.button>
+            {emailSubmitted && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="mt-4 text-green-500 dark:text-green-400"
+              >
+                Email sent successfully!
+              </motion.p>
+            )}
+          </form>
+        </motion.div>
+      </div>
     </section>
   );
 };

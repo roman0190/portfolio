@@ -5,8 +5,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class", // Enable class-based dark mode
   theme: {
     extend: {
+      screens: {
+        xs: "480px", // Add extra small breakpoint
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -36,6 +40,9 @@ module.exports = {
       },
       boxShadow: {
         rgb: "0 0 10px 4px rgba(255, 0, 0, 0.6), 0 0 20px 8px rgba(0, 255, 0, 0.6), 0 0 30px 12px rgba(0, 0, 255, 0.6)",
+      },
+      colors: {
+        // Add any custom colors here if needed
       },
     },
   },

@@ -1,36 +1,19 @@
 // components/NavLink.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
 const NavLink = ({ href, title, onClick }) => {
   return (
-    <motion.div
-      whileHover={{
-        scale: 1.1,
-        rotate: [0, -5, 5, -5, 0], // Wobble effect
-        color: "#ffffff",
-        transition: {
-          duration: 0.5,
-          ease: "easeInOut",
-        },
-      }}
-      whileTap={{
-        scale: 0.95,
-        rotate: -10, // Slight rotation when tapped
-        transition: {
-          duration: 0.2,
-        },
-      }}
+    <Link
+      href={href}
+      onClick={onClick}
+      className="relative block py-2 text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
     >
-      <Link
-        href={href}
-        onClick={onClick}
-        className='block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white'
-      >
+      <span className="relative">
         {title}
-      </Link>
-    </motion.div>
+        <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-blue-500 to-teal-400 transition-all duration-300 group-hover:w-full"></span>
+      </span>
+    </Link>
   );
 };
 

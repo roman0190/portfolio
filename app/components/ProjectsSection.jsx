@@ -2,7 +2,8 @@
 import React, { useRef, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
-import { animate, motion, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useTheme } from "../contexts/ThemeContext";
 
 const ProjectsData = [
   {
@@ -120,8 +121,7 @@ const ProjectsData = [
   {
     id: 9,
     title: "Open-World Game with Unity 6 (Basic)",
-    description:
-      "An open-world game built using Unity 6",
+    description: "An open-world game built using Unity 6",
     image: "./image/projects/13.png",
     tag: ["All", "Game"],
     gitUrl: "https://github.com/roman0190/unity_open_world/nai_khuijalav o nai",
@@ -133,6 +133,7 @@ const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const { theme } = useTheme();
 
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
@@ -142,57 +143,80 @@ const ProjectsSection = () => {
   const handleTagChange = (newTag) => {
     setTag(newTag);
   };
+
   const filteredProjects = ProjectsData.filter((project) =>
     project.tag.includes(tag)
   );
+
   return (
-    <div ref={ref} className="font-mono relative">
-      <h1 className="flex text-4xl font-semibold justify-center pb-2">
-        My Projects
-      </h1>
-      <div className="text-white flex flex-row gap-2 justify-center items-center py-6 ">
+    <section
+      id="projects"
+      className="py-12 md:py-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-center mb-8 md:mb-12"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          My{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
+            Projects
+          </span>
+        </h2>
+        <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-teal-400 mx-auto rounded-full"></div>
+      </motion.div>
+
+      <div className="flex flex-wrap justify-center gap-2 md:gap-4 py-4 md:py-6">
         <ProjectTag
-          onClick={handleTagChange}
-          name={"All"}
+          onClick={() => handleTagChange("All")}
+          name="All"
           isSelected={tag === "All"}
         />
         <ProjectTag
-          onClick={handleTagChange}
-          name={"Web"}
+          onClick={() => handleTagChange("Web")}
+          name="Web"
           isSelected={tag === "Web"}
         />
         <ProjectTag
-          onClick={handleTagChange}
-          name={"Mobile"}
+          onClick={() => handleTagChange("Mobile")}
+          name="Mobile"
           isSelected={tag === "Mobile"}
         />
         <ProjectTag
-          onClick={handleTagChange}
-          name={"Game"}
+          onClick={() => handleTagChange("Game")}
+          name="Game"
           isSelected={tag === "Game"}
         />
       </div>
-      <ul className="grid lg:grid-cols-3 gap-4 grid-cols-1  ">
-        {filteredProjects.map((project, index) => (
-          <motion.li
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.5, delay: index * 0.5 }}
-            key={index}
-          >
-            <ProjectCard
+
+      <div className="mt-8">
+        <ul
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+        >
+          {filteredProjects.map((project, index) => (
+            <motion.li
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 0.5, delay: Math.min(index * 0.2, 1) }} // Cap delay for better mobile experience
               key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-            />
-          </motion.li>
-        ))}
-      </ul>
-    </div>
+              className="h-full"
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+              />
+            </motion.li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 };
 

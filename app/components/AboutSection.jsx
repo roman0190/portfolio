@@ -203,7 +203,7 @@ const AboutSection = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-teal-400 rounded-xl blur-lg opacity-30 dark:opacity-40"></div>
               <Image
-                src="./image/about-img.webp"
+                src="/image/about-img.webp"
                 alt="About me image"
                 width={500}
                 height={500}

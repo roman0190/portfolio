@@ -1,33 +1,38 @@
-// app/page.js
 "use client";
 import AboutSection from "./components/AboutSection";
 import EmailSection from "./components/EmailSection";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import ProjectsSection from "./components/ProjectsSection";
-import { motion } from "framer-motion";
-
+import { motion, LazyMotion, domAnimation } from "framer-motion";
 
 export default function Home() {
   return (
-    <div>
-      <div className="z-50">
-        <motion.main className="flex min-h-screen flex-col ">
-          <Navbar />
-          <div className="container mx-auto mt-24 px-12 py-4">
-            <HeroSection />
-            <motion.section id="about" layout>
+    <LazyMotion features={domAnimation}>
+      <div className="relative">
+        <Navbar />
+        <main className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <HeroSection />
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <section id="about" className="py-16">
               <AboutSection />
-            </motion.section>
-            <motion.section id="projects" layout>
+            </section>
+
+            <section id="projects" className="py-16">
               <ProjectsSection />
-            </motion.section>
-            <motion.section id="contact" layout>
+            </section>
+
+            <section id="contact" className="py-16">
               <EmailSection />
-            </motion.section>
-          </div>
-        </motion.main>
+            </section>
+          </motion.div>
+        </main>
       </div>
-    </div>
+    </LazyMotion>
   );
 }

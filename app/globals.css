@@ -34,10 +34,6 @@ html {
   scrollbar-width: none; /* Firefox */
 }
 
-/* Hide default cursor */
-* {
-  cursor: none !important;
-}
 
 /* Make sure elements that need to be clickable still show some indication */
 a, button, [role="button"], input[type="button"], input[type="submit"] {

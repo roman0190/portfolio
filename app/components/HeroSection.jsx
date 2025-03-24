@@ -72,7 +72,7 @@ const HeroSection = () => {
                 <Image
                   width={1080}
                   height={1080}
-                  src="/image/dum.webp"
+                  src="./image/dum.webp"
                   alt="Roman portrait"
                 />
               </div>

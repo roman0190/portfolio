@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import MagnifyImage from "./MagnifyImage";
+
 
 const HeroSection = () => {
   return (
@@ -69,10 +69,11 @@ const HeroSection = () => {
             <div className="relative w-[180px] h-[180px] xs:w-[220px] xs:h-[220px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[350px] lg:h-[350px] xl:w-[400px] xl:h-[400px]">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 opacity-90"></div>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[96%] h-[96%] rounded-full overflow-hidden">
-                <MagnifyImage
-                  src="./image/dum.webp"
+                <Image
+                  width={1080}
+                  height={1080}
+                  src="/image/dum.webp"
                   alt="Roman portrait"
-                  sizes="(max-width: 480px) 180px, (max-width: 768px) 280px, (max-width: 1024px) 320px, 400px"
                 />
               </div>
             </div>

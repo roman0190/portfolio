@@ -21,7 +21,7 @@ const ChatBot = () => {
     "Who is Roman?",
     "Skills",
     "Projects",
-    "Contact info",
+    "Oi kire",
   ]);
   const [conversationContext, setConversationContext] = useState({
     lastTopic: null,
@@ -35,6 +35,7 @@ const ChatBot = () => {
     hello:
       "Hi there! I'm Roman's AI assistant. What would you like to know about him?",
     hey: "Hey! I'm here to help you learn more about Roman. What are you interested in?",
+    "oi kire kire": "Modhu modhu modhu",
 
     // About Roman
     "who is roman":
@@ -45,7 +46,7 @@ const ChatBot = () => {
       "Roman Howladar is a dedicated frontend developer with a passion for building beautiful, functional user interfaces. He combines technical expertise with creative problem-solving to deliver exceptional web experiences.",
 
     // Skills
-    Skills:
+    skills:
       "Roman is skilled in JavaScript/TypeScript, React, Next.js, TailwindCSS, Node.js, Express, MongoDB, and more. He's particularly strong in creating responsive user interfaces and full-stack applications.",
     "what are roman's skills":
       "Roman is skilled in JavaScript/TypeScript, React, Next.js, TailwindCSS, Node.js, Express, MongoDB, and more. He's particularly strong in creating responsive user interfaces and full-stack applications.",
@@ -81,7 +82,7 @@ const ChatBot = () => {
     github: "Check out Roman's code repositories at github.com/roman-howladar",
     "social media":
       "Roman is active on LinkedIn, GitHub, and Twitter. Which platform would you like the link for?",
-
+    "oi kire": "Modhu modhu modhu",
     // Fun facts
     "fun fact":
       "Roman not only develops web applications but has also dabbled in game development with Unity!",
@@ -152,37 +153,37 @@ const ChatBot = () => {
     return response;
   };
 
+  // Update conversation context based on input
   const findResponse = (input) => {
-    // Update conversation context based on input
     let newContext = { ...conversationContext };
     newContext.interactionCount += 1;
 
     const normalizedInput = input.toLowerCase();
     // Detect topic from input
     if (
-      normalizedInput.includes("skill") ||
       normalizedInput.includes("tech") ||
+      normalizedInput.includes("skill") ||
       normalizedInput.includes("programming")
     ) {
       newContext.lastTopic = "skills";
       newContext.topicHistory.push("skills");
     } else if (
-      normalizedInput.includes("project") ||
       normalizedInput.includes("work") ||
+      normalizedInput.includes("project") ||
       normalizedInput.includes("portfolio")
     ) {
       newContext.lastTopic = "projects";
       newContext.topicHistory.push("projects");
     } else if (
-      normalizedInput.includes("contact") ||
       normalizedInput.includes("email") ||
+      normalizedInput.includes("contact") ||
       normalizedInput.includes("reach")
     ) {
       newContext.lastTopic = "contact";
       newContext.topicHistory.push("contact");
     } else if (
-      normalizedInput.includes("who") ||
       normalizedInput.includes("about roman") ||
+      normalizedInput.includes("who") ||
       normalizedInput.includes("background")
     ) {
       newContext.lastTopic = "about";
@@ -190,7 +191,6 @@ const ChatBot = () => {
     }
 
     setConversationContext(newContext);
-
     // Generate contextual response based on input and conversation history
     return generateContextualResponse(input, newContext);
   };
@@ -220,7 +220,6 @@ const ChatBot = () => {
       };
       setMessages((prev) => [...prev, botResponse]);
       setIsTyping(false);
-
       // Update suggestions based on conversation context
       updateSuggestions(input);
     }, Math.min(700 + Math.random() * 800, 2000)); // Variable response time for more natural feel
@@ -271,8 +270,8 @@ const ChatBot = () => {
     }
   };
 
-  // Scroll to bottom when messages update
   useEffect(() => {
+    // Scroll to bottom when messages update
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
@@ -281,9 +280,9 @@ const ChatBot = () => {
       {/* Chat bot toggle button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-24 right-6 md:right-8 z-50 p-4 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 text-white shadow-lg"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
+        className="fixed bottom-24 right-6 md:right-8 z-50 p-4 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 text-white shadow-lg"
       >
         <FaRobot size={20} />
       </motion.button>

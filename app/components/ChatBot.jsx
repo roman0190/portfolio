@@ -249,7 +249,7 @@ const ChatBot = () => {
     } else if (topic === "skills" || lowercaseInput.includes("skill")) {
       setSuggestions([
         "Frontend skills",
-        "Backend experience",
+        "Backend skills",
         "Programming languages",
         "Learning now?",
       ]);

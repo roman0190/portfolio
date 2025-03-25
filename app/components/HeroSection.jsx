@@ -162,7 +162,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 blur-xl opacity-30 dark:opacity-40 animate-pulse"></div>
 
               <Image
-                src="/image/dum.webp"
+                src="./image/dum.webp"
                 alt="Roman Howladar"
                 width={400}
                 height={400}

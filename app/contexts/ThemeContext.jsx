@@ -31,6 +31,19 @@ export function ThemeProvider({ children }) {
         setTheme(systemPrefersDark ? "dark" : "light");
         document.documentElement.classList.toggle("dark", systemPrefersDark);
       }
+
+      // Add listener for system theme change
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const handleChange = (e) => {
+        if (!localStorage.getItem("theme")) {
+          const newTheme = e.matches ? "dark" : "light";
+          setTheme(newTheme);
+          document.documentElement.classList.toggle("dark", e.matches);
+        }
+      };
+
+      mediaQuery.addEventListener("change", handleChange);
+      return () => mediaQuery.removeEventListener("change", handleChange);
     }
   }, []);
 

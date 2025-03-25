@@ -51,7 +51,7 @@ const ThemeToggle = () => {
     <motion.button
       onClick={handleToggle}
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-      className={`relative w-10 h-10 rounded-full p-2 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 dark:focus:ring-offset-gray-900`}
+      className={`relative w-12 h-12 sm:w-10 sm:h-10 rounded-full p-2 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 dark:focus:ring-offset-gray-900 touch-manipulation`}
       variants={toggleVariants}
       animate={theme}
       whileTap={{ scale: 0.85 }}
@@ -78,8 +78,9 @@ const ThemeToggle = () => {
           animate="dark"
           exit={{ opacity: 0, rotate: -180, scale: 0 }}
           style={{ zIndex: 1, transformStyle: "preserve-3d" }}
+          className="text-xl sm:text-base"
         >
-          <FiMoon size={18} />
+          <FiMoon size="100%" />
         </motion.div>
       ) : (
         <motion.div
@@ -89,8 +90,9 @@ const ThemeToggle = () => {
           animate="light"
           exit={{ opacity: 0, rotate: 180, scale: 0 }}
           style={{ zIndex: 1, transformStyle: "preserve-3d" }}
+          className="text-xl sm:text-base"
         >
-          <FiSun size={18} />
+          <FiSun size="100%" />
         </motion.div>
       )}
     </motion.button>

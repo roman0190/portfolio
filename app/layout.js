@@ -44,7 +44,9 @@ export const metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  maximumScale: 5, // Allow zooming for accessibility
+  minimumScale: 1,
+  userScalable: true, // Allow users to zoom
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#121212" },
@@ -55,12 +57,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-white dark:bg-[#121212] text-black dark:text-white transition-colors duration-300`}
+        className={`${inter.className} bg-white dark:bg-[#121212] text-black dark:text-white transition-colors duration-300 overflow-x-hidden`}
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
 }
-
-

@@ -76,7 +76,6 @@ const TAB_DATA = [
             description:
               "Focusing on software development, algorithms, and web technologies. Active participant in coding competitions and tech events.",
           },
-        
         ].map((edu, i) => (
           <motion.div
             key={i}
@@ -179,9 +178,9 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             About{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
               Me
@@ -190,7 +189,7 @@ const AboutSection = () => {
           <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-teal-400 mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="md:grid md:grid-cols-12 gap-12 items-center">
+        <div className="flex flex-col md:grid md:grid-cols-12 gap-6 md:gap-12 items-center">
           {/* Image column */}
           <motion.div
             ref={ref}
@@ -198,18 +197,18 @@ const AboutSection = () => {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="col-span-5 mb-10 md:mb-0"
+            className="w-full md:col-span-5 mb-8 md:mb-0 order-1 md:order-1"
           >
-            <div className="relative">
+            <div className="relative max-w-sm mx-auto md:max-w-none">
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-teal-400 rounded-xl blur-lg opacity-30 dark:opacity-40"></div>
               <Image
                 src="./image/about-img.webp"
                 alt="About me image"
                 width={500}
                 height={500}
-                className="rounded-xl shadow-lg relative  w-full h-auto"
+                className="rounded-xl shadow-lg relative w-full h-auto"
               />
-              <div className="absolute -bottom-6 -right-6 h-24 w-24 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full blur-xl opacity-60 dark:opacity-80 z-0"></div>
+              <div className="absolute -bottom-6 -right-6 h-16 w-16 md:h-24 md:w-24 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full blur-xl opacity-60 dark:opacity-80 z-0"></div>
             </div>
           </motion.div>
 
@@ -219,18 +218,18 @@ const AboutSection = () => {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="col-span-7"
+            className="w-full md:col-span-7 order-2 md:order-2"
           >
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white mb-3 md:mb-4">
               Web Developer & CS Student
             </h3>
-            <p className="text-base lg:text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+            <p className="text-sm md:text-base lg:text-lg text-gray-700 dark:text-gray-300 mb-4 md:mb-6 leading-relaxed">
               I'm Roman, a passionate web developer and Computer Science student
               from Bangladesh. I love creating responsive and interactive web
               applications that solve real problems and deliver exceptional user
               experiences.
             </p>
-            <p className="text-base lg:text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+            <p className="text-sm md:text-base lg:text-lg text-gray-700 dark:text-gray-300 mb-6 md:mb-8 leading-relaxed">
               With a strong foundation in both frontend and backend development,
               I enjoy working with modern frameworks and technologies. I'm
               constantly learning and exploring new tools to enhance my skills
@@ -238,7 +237,7 @@ const AboutSection = () => {
             </p>
 
             {/* Tab buttons */}
-            <div className="flex flex-col md:flex-row gap-6 justify-start mb-8 border-b border-gray-200 dark:border-gray-700">
+            <div className="flex flex-wrap gap-3 md:gap-6 justify-start mb-6 md:mb-8 border-b border-gray-200 dark:border-gray-700 overflow-x-auto pb-2">
               {TAB_DATA.map((tabItem) => (
                 <TabButton
                   key={tabItem.id}
@@ -257,7 +256,7 @@ const AboutSection = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="mt-6"
+              className="mt-4 md:mt-6"
             >
               {currentTabData.content}
             </motion.div>

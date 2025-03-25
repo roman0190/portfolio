@@ -134,7 +134,6 @@ const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
     animate: { y: 0, opacity: 1 },
@@ -151,15 +150,15 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="py-12 md:py-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+      className="py-8 sm:py-12 md:py-20 mx-auto max-w-7xl px-3 sm:px-6 lg:px-8"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center mb-8 md:mb-12"
+        className="text-center mb-6 md:mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">
           My{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
             Projects
@@ -168,7 +167,7 @@ const ProjectsSection = () => {
         <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-teal-400 mx-auto rounded-full"></div>
       </motion.div>
 
-      <div className="flex flex-wrap justify-center gap-2 md:gap-4 py-4 md:py-6">
+      <div className="flex flex-wrap justify-center gap-2 md:gap-4 py-3 md:py-6 overflow-x-auto scrollbar-hide">
         <ProjectTag
           onClick={() => handleTagChange("All")}
           name="All"
@@ -191,10 +190,10 @@ const ProjectsSection = () => {
         />
       </div>
 
-      <div className="mt-8">
+      <div className="mt-6 md:mt-8">
         <ul
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
         >
           {filteredProjects.map((project, index) => (
             <motion.li

@@ -88,7 +88,7 @@ const HeroSection = () => {
                   1000,
                   "Frontend Specialist",
                   1000,
-                  "UI/UX Enthusiast",
+                  "Problem Solver",
                   1000,
                   "CS Student",
                   1000,
@@ -157,16 +157,16 @@ const HeroSection = () => {
               transition: "transform 0.1s ease-out",
             }}
           >
-            <div className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[280px] md:h-[280px] lg:w-[400px] lg:h-[400px] relative mx-auto">
+            <div className="w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[340px] md:h-[340px] lg:w-[400px] lg:h-[400px] relative mx-auto">
               {/* Glowing effect behind avatar */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 blur-xl opacity-30 dark:opacity-40 animate-pulse"></div>
 
               <Image
                 src="./image/dum.webp"
                 alt="Roman Howladar"
-                width={400}
-                height={400}
-                className="rounded-full border-4 border-gray-200 dark:border-gray-700 mx-auto w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] md:w-[260px] md:h-[260px] lg:w-[380px] lg:h-[380px] object-cover"
+                width={480}
+                height={480}
+                className="rounded-full border-4 border-gray-200 dark:border-gray-700 mx-auto w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[320px] md:h-[320px] lg:w-[400px] lg:h-[400px] object-contain"
                 priority={true}
                 style={{
                   transform: !isMobile ? "translateZ(50px)" : "none",
@@ -178,10 +178,10 @@ const HeroSection = () => {
               {!isMobile && (
                 <>
                   <div
-                    className="absolute top-5 right-0 w-6 sm:w-8 h-6 sm:h-8 bg-blue-500 rounded-full hidden sm:block"
+                    className="absolute top-5 right-0 w-8 sm:w-10 h-8 sm:h-10 bg-blue-500 rounded-full hidden sm:block"
                     style={{
-                      transform: "translateZ(30px) translateX(10px)",
-                      boxShadow: "0 0 10px rgba(59, 130, 246, 0.5)",
+                      transform: "translateZ(35px) translateX(15px)",
+                      boxShadow: "0 0 12px rgba(59, 130, 246, 0.5)",
                     }}
                   />
                   <div

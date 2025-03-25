@@ -18,6 +18,7 @@ module.exports = {
       },
       animation: {
         "rgb-blur": "rgb-effect 4s linear infinite",
+        float: "float 5s ease-in-out infinite",
       },
       keyframes: {
         "rgb-effect": {
@@ -37,12 +38,40 @@ module.exports = {
               "0 0 10px 4px rgba(255, 0, 0, 0.6), 0 0 20px 8px rgba(0, 255, 0, 0.6), 0 0 30px 12px rgba(0, 0, 255, 0.6)",
           },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
       boxShadow: {
         rgb: "0 0 10px 4px rgba(255, 0, 0, 0.6), 0 0 20px 8px rgba(0, 255, 0, 0.6), 0 0 30px 12px rgba(0, 0, 255, 0.6)",
+        "3d": "0 10px 30px -15px rgba(0, 0, 0, 0.3)",
+        "3d-dark": "0 10px 30px -15px rgba(0, 0, 0, 0.7)",
       },
       colors: {
-        // Add any custom colors here if needed
+        primary: {
+          light: "#3B82F6", // blue-500
+          dark: "#60A5FA", // blue-400
+        },
+        secondary: {
+          light: "#2DD4BF", // teal-400
+          dark: "#5EEAD4", // teal-300
+        },
+        background: {
+          light: "#FFFFFF",
+          dark: "#121212",
+        },
+        surface: {
+          light: "#F9FAFB",
+          dark: "#1F2937",
+        },
+        // Additional gradient colors
+        gradient: {
+          start: "#3B82F6", // blue-500
+          end: "#2DD4BF", // teal-400
+          "dark-start": "#60A5FA", // blue-400
+          "dark-end": "#5EEAD4", // teal-300
+        },
       },
     },
   },

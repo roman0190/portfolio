@@ -10,6 +10,24 @@
   body {
     @apply transition-colors duration-300;
   }
+  
+  /* 3D card effect for light/dark themes */
+  .card-3d {
+    @apply bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/30 rounded-lg overflow-hidden
+    transition-all duration-300 hover:shadow-3d dark:hover:shadow-3d-dark
+    border border-gray-100 dark:border-gray-700/50;
+  }
+  
+  /* 3D button styles */
+  .button-3d {
+    @apply relative bg-gradient-to-r from-gradient-start to-gradient-end
+    dark:from-gradient-dark-start dark:to-gradient-dark-end
+    text-white font-medium px-6 py-3 rounded-lg
+    transition-transform duration-200
+    hover:-translate-y-1 active:translate-y-0
+    shadow-lg hover:shadow-xl active:shadow-md
+    transform perspective-1000;
+  }
 }
 
 /* Smooth scrolling */
@@ -19,8 +37,8 @@ html {
 
 /* Theme transition */
 * {
-  transition-property: color, background-color, border-color;
-  transition-duration: 200ms;
+  transition-property: color, background-color, border-color, transform, box-shadow;
+  transition-duration: 300ms;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -34,10 +52,28 @@ html {
   scrollbar-width: none; /* Firefox */
 }
 
-
 /* Make sure elements that need to be clickable still show some indication */
 a, button, [role="button"], input[type="button"], input[type="submit"] {
   cursor: none !important;
+}
+
+/* 3D transform hover states for cards */
+.project-card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.project-card-3d:hover {
+  transform: translateY(-10px) rotateX(3deg) rotateY(3deg);
+}
+
+/* 3D text effect for headings */
+.text-3d {
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+}
+
+.dark .text-3d {
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.15);
 }
 
 :root {
@@ -68,8 +104,12 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
 }
-/* styles/globals.css or a specific CSS file */
+
 /* Blurred Dot Styles */
 .blur-dot {
   position: fixed;
@@ -80,4 +120,18 @@ body {
   transition: background 2.5s ease; /* Smooth color transition */
   justify-items: center;
   align-items: center;
+}
+
+/* 3D background element */
+.background-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.15;
+  z-index: -1;
+  transition: all 1s ease-out;
+}
+
+.dark .background-glow {
+  opacity: 0.2;
 }

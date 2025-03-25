@@ -1,19 +1,24 @@
 // components/NavLink.jsx
-import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import React from "react";
 
 const NavLink = ({ href, title, onClick }) => {
   return (
-    <Link
-      href={href}
-      onClick={onClick}
-      className="relative block py-2 text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      style={{ transformStyle: "preserve-3d" }}
     >
-      <span className="relative">
+      <Link
+        href={href}
+        onClick={onClick}
+        className="group relative inline-block text-gray-900 dark:text-gray-100 font-medium transition-all duration-300 hover:text-blue-600 dark:hover:text-blue-400"
+      >
         {title}
-        <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-blue-500 to-teal-400 transition-all duration-300 group-hover:w-full"></span>
-      </span>
-    </Link>
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 dark:bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+      </Link>
+    </motion.div>
   );
 };
 

@@ -81,14 +81,19 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300  ${
         scrolled || navbarOpen
           ? "bg-white/95 dark:bg-[#121222]/95 shadow-md backdrop-blur-sm"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{
+        duration: 0.5,
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      }}
     >
       <div className="flex flex-wrap items-center justify-between mx-auto px-4 sm:px-6 py-2 sm:py-3">
         <Link
@@ -99,14 +104,20 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent"
+            className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent relative"
+            whileHover={{
+              scale: 1.05,
+              textShadow: "0px 0px 8px rgb(59 130 246 / 0.5)",
+            }}
+            style={{ transformStyle: "preserve-3d" }}
           >
             Roman.dev
+            <div className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-blue-600 to-green-500 group-hover:w-full transition-all duration-300"></div>
           </motion.span>
         </Link>
 
         <div className="flex items-center gap-2 sm:gap-4">
-
+          <ThemeToggle />
           <div className="md:hidden">
             <motion.button
               onClick={(e) => {
@@ -115,6 +126,8 @@ const Navbar = () => {
               }}
               className="p-1.5 sm:p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
               whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.05 }}
+              style={{ transformStyle: "preserve-3d" }}
               aria-label={navbarOpen ? "Close menu" : "Open menu"}
             >
               {navbarOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -129,13 +142,17 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
           >
-              <ThemeToggle />
             {navLinks.map((link, index) => (
               <motion.li
                 key={index}
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20,
+                  delay: index * 0.1,
+                }}
               >
                 <NavLink
                   href={link.path}
@@ -150,14 +167,12 @@ const Navbar = () => {
       <AnimatePresence>
         {navbarOpen && (
           <motion.div
-          className="md:hidden fixed top-[49px] sm:top-[56px] left-0 right-0 bottom-0 bg-white/95 dark:bg-[#121222]/95 backdrop-blur-sm z-50"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.2 }}
+            className="md:hidden fixed top-[49px] sm:top-[56px] left-0 right-0 bottom-0 bg-white/95 dark:bg-[#121222]/95 backdrop-blur-sm z-50"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ type: "spring", damping: 20, stiffness: 300 }}
           >
-            <ThemeToggle />
-
             <MenuOverlay links={navLinks} onClick={handleNavLinkClick} />
           </motion.div>
         )}

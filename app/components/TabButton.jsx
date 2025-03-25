@@ -3,26 +3,29 @@ import { motion } from "framer-motion";
 
 const TabButton = ({ active, selectTab, children, icon }) => {
   const buttonClasses = active
-    ? "text-blue-500 dark:text-blue-400 border-b-2 border-blue-500 dark:border-blue-400"
-    : "text-gray-600 dark:text-gray-400 border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200";
+    ? "text-blue-500 dark:text-blue-400 border-b-2 border-blue-500 dark:border-blue-400 font-bold"
+    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200";
 
   return (
     <motion.button
+      className={`flex items-center ${buttonClasses} pb-2 transition-colors duration-200`}
       onClick={selectTab}
-      className={`flex items-center px-4 py-2 font-medium transition-colors duration-300 ${buttonClasses} relative`}
       whileHover={{ y: -2 }}
       whileTap={{ y: 0 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      style={{ transformStyle: "preserve-3d" }}
     >
-      {/* Conditionally render icon if provided */}
-      {icon && <span className="mr-1">{icon}</span>}
-      
+      {icon}
       <span>{children}</span>
-      
+
+      {/* Active indicator */}
       {active && (
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-teal-400"
+        <motion.span
+          className="absolute -bottom-[2px] left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-teal-400"
           layoutId="activeTab"
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ type: "spring", stiffness: 380, damping: 30 }}
         />
       )}
     </motion.button>

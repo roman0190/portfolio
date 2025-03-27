@@ -144,7 +144,7 @@ const InstructionRobot = () => {
     if (speaking) {
       const timer = setInterval(() => {
         setCurrentInstruction((prev) => (prev + 1) % instructions.length);
-      }, 5000);
+      }, 3000);
 
       return () => clearInterval(timer);
     }

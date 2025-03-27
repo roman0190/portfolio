@@ -138,7 +138,7 @@ const EmailSection = () => {
             <motion.a
               whileHover={{ y: -3, boxShadow: "0 4px 12px rgba(0,0,0,0.15)" }}
               style={{ transformStyle: "preserve-3d" }}
-              href="mailto:romanhowladar@gmail.com"
+              href="mailto:romanhowladar841@gmail.com"
               className="p-3 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
             >
               <FaEnvelope className="text-xl text-gray-700 dark:text-gray-300" />

@@ -3,7 +3,6 @@ import React, { useRef, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
-import { useTheme } from "../contexts/ThemeContext";
 
 const ProjectsData = [
   // {
@@ -25,6 +24,16 @@ const ProjectsData = [
     tag: ["All", "Mobile"],
     gitUrl: "/",
     previewUrl: "https://www.refindz.io/",
+  },
+  {
+    id: 11,
+    title: "AIUB Class Scheduler",
+    description:
+      "AIUB Class Scheduler is a web application that automatically generates optimized class routines for students. Built with Next.js and Tailwind CSS, it helps users select desired courses and generates conflict-free schedules, ensuring no course repeats on the same day. Designed specifically for AIUB Open Credit system.",
+    image: "./image/projects/15.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/roman0190/aiub-class-scheduler",
+    previewUrl: "https://aiub-class-scheduler.vercel.app/",
   },
   {
     id: 2,

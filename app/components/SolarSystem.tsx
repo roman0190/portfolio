@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import Image from "next/image";
+
 import { useTheme } from "../contexts/ThemeContext";
 
 const SolarSystem = () => {

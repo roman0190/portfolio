@@ -13,7 +13,7 @@ const achievementsList = [
   },
   {
     metric: "Lines of Code",
-    value: 10000, // Update with your estimate
+    value: 100000, // Update with your estimate
     icon: <FaCode className="text-2xl md:text-3xl" />,
     description: "and counting...",
   },

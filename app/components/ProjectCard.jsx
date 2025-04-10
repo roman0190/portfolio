@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
@@ -8,6 +8,7 @@ import { useTheme } from "../contexts/ThemeContext";
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
   const { theme } = useTheme();
   const cardRef = useRef(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   // 3D tilt effect values
   const x = useMotionValue(0);
@@ -44,6 +45,11 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
     // Reset to original position when mouse leaves
     x.set(0);
     y.set(0);
+  }
+
+  function toggleDescription(e) {
+    e.stopPropagation();
+    setIsExpanded(!isExpanded);
   }
 
   return (
@@ -83,12 +89,26 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
         className="p-4 sm:p-6 flex-grow flex flex-col bg-white dark:bg-gray-800 rounded-b-lg"
         style={{ transform: "translateZ(10px)" }}
       >
-        <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 line-clamp-2 text-3d">
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 line-clamp-3 text-3d">
           {title}
         </h3>
-        <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-4 flex-grow line-clamp-4">
-          {description}
-        </p>
+        <div className="flex flex-col flex-grow">
+          <p
+            className={`text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-1 ${
+              isExpanded ? "" : "line-clamp-4"
+            }`}
+          >
+            {description}
+          </p>
+          {description.length > 200 && (
+            <button
+              onClick={toggleDescription}
+              className="text-blue-500 dark:text-blue-400 text-sm font-medium hover:underline self-end mt-1"
+            >
+              {isExpanded ? "See less" : "See more"}
+            </button>
+          )}
+        </div>
         <div className="flex justify-between items-center mt-auto">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link

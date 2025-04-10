@@ -6,7 +6,7 @@ import { FaGraduationCap, FaBriefcase, FaCode } from "react-icons/fa";
 
 const timelineItems = [
   {
-    year: "2022",
+    year: "2021",
     title: "Started Computer Science Degree",
     description:
       "Began my journey at American International University - Bangladesh studying Computer Science.",
@@ -37,13 +37,13 @@ const timelineItems = [
     icon: <FaCode />,
     type: "project",
   },
-  {
-    year: "2024",
-    title: "Web Developer Intern",
-    description: "Joined a local tech startup as a web development intern.",
-    icon: <FaBriefcase />,
-    type: "work",
-  },
+  // {
+  //   year: "2024",
+  //   title: "Web Developer Intern",
+  //   description: "Joined a local tech startup as a web development intern.",
+  //   icon: <FaBriefcase />,
+  //   type: "work",
+  // },
 ];
 
 const TimelineItem = ({ item, index }) => {

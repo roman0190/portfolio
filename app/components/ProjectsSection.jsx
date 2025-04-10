@@ -6,15 +6,25 @@ import { motion, useInView } from "framer-motion";
 import { useTheme } from "../contexts/ThemeContext";
 
 const ProjectsData = [
+  // {
+  //   id: 10,
+  //   title: "Twitter/X Clone(Under Development)",
+  //   description:
+  //     "A Twitter/X clone built using Next.js, Tailwind CSS, and Unig, with ImageKit for storing post images and videos. The project is currently under development and will include features like user authentication, real-time posts, likes, comments, and a responsive UI.",
+  //   image: "./image/projects/12.png",
+  //   tag: ["All", "Web"],
+  //   gitUrl: "https://github.com/roman0190/twitter-x-clone.git",
+  //   previewUrl: "https://twitter-x-clone-phi.vercel.app/",
+  // },
   {
     id: 10,
-    title: "Twitter/X Clone(Under Development)",
+    title: "Refindz",
     description:
-      "A Twitter/X clone built using Next.js, Tailwind CSS, and Unig, with ImageKit for storing post images and videos. The project is currently under development and will include features like user authentication, real-time posts, likes, comments, and a responsive UI.",
-    image: "./image/projects/12.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/roman0190/twitter-x-clone.git",
-    previewUrl: "https://twitter-x-clone-phi.vercel.app/",
+      "Refindz is a Mobile application designed to help users find antique items. Built with React Native , it features user authentication, item listings, and a responsive design. The app allows users to create accounts, post items, and search for items.",
+    image: "./image/projects/14.png",
+    tag: ["All", "Mobile"],
+    gitUrl: "/",
+    previewUrl: "https://www.refindz.io/",
   },
   {
     id: 2,
@@ -47,16 +57,16 @@ const ProjectsData = [
     previewUrl: "https://text-to-image-ai-one.vercel.app/",
   },
 
-  {
-    id: 3,
-    title: "Talent Trades",
-    description:
-      "Talent Trades aims to develop a web-based platform similar to Fiverr, facilitating transactions between service providers (sellers) and service seekers (buyers). The platform will offer features for user registration, gig creation, order placement, real-time messaging, payment processing, and moderation.",
-    image: "./image/projects/2.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/roman0190/talent-trades-FE.git",
-    previewUrl: "https://github.com/roman0190/talent-trades-FE.git",
-  },
+  // {
+  //   id: 3,
+  //   title: "Talent Trades",
+  //   description:
+  //     "Talent Trades aims to develop a web-based platform similar to Fiverr, facilitating transactions between service providers (sellers) and service seekers (buyers). The platform will offer features for user registration, gig creation, order placement, real-time messaging, payment processing, and moderation.",
+  //   image: "./image/projects/2.png",
+  //   tag: ["All", "Web"],
+  //   gitUrl: "https://github.com/roman0190/talent-trades-FE.git",
+  //   previewUrl: "https://github.com/roman0190/talent-trades-FE.git",
+  // },
   {
     id: 4,
     title: "Chat App",
@@ -67,16 +77,16 @@ const ProjectsData = [
     gitUrl: "https://github.com/roman0190/chat-app-nextjs-firebase-.git",
     previewUrl: "https://chat-app-nextjs-firebase-ecru.vercel.app/",
   },
-  {
-    id: 5,
-    title: "AnyTech-Clone",
-    description:
-      "AnyTech-Clone is a modern digital landing page built using Next.js ,TailwindCss and Framer Motion. It features smooth animations, responsive design, and optimized performance for an engaging user experience.",
-    image: "./image/projects/11.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/roman0190/anyTech-clone.git",
-    previewUrl: "https://any-tech-clone.vercel.app/",
-  },
+  // {
+  //   id: 5,
+  //   title: "AnyTech-Clone",
+  //   description:
+  //     "AnyTech-Clone is a modern digital landing page built using Next.js ,TailwindCss and Framer Motion. It features smooth animations, responsive design, and optimized performance for an engaging user experience.",
+  //   image: "./image/projects/11.png",
+  //   tag: ["All", "Web"],
+  //   gitUrl: "https://github.com/roman0190/anyTech-clone.git",
+  //   previewUrl: "https://any-tech-clone.vercel.app/",
+  // },
   {
     id: 100,
     title: "File Uploader",
@@ -88,16 +98,16 @@ const ProjectsData = [
     previewUrl: "https://file-uploader-lovat.vercel.app/",
   },
 
-  {
-    id: 6,
-    title: "MAAR-ket",
-    description:
-      "'The Super Shop Management (MAAR-ket)' system, developed using C# and .NET, is a comprehensive tool designed to streamline shop operations. Key features include inventory management, sales tracking, a chatting system, purchase history tracking, and a cart feature, making it an efficient solution for managing retail businesses.",
-    image: "./image/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
+  // {
+  //   id: 6,
+  //   title: "MAAR-ket",
+  //   description:
+  //     "'The Super Shop Management (MAAR-ket)' system, developed using C# and .NET, is a comprehensive tool designed to streamline shop operations. Key features include inventory management, sales tracking, a chatting system, purchase history tracking, and a cart feature, making it an efficient solution for managing retail businesses.",
+  //   image: "./image/projects/5.png",
+  //   tag: ["All", "Web"],
+  //   gitUrl: "/",
+  //   previewUrl: "/",
+  // },
   {
     id: 7,
     title: "Weather",

@@ -20,10 +20,10 @@ export const metadata = {
     description:
       "Personal portfolio showcasing projects and skills in web development",
     type: "website",
-    url: "https://roman.dev",
+    url: "https://roman0190.github.io/portfolio/",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/image/dum.webp",
         width: 1200,
         height: 630,
         alt: "Roman Howladar - Full Stack Developer",
@@ -36,9 +36,9 @@ export const metadata = {
     description:
       "Personal portfolio showcasing projects and skills in web development",
     creator: "@roman_howladar",
-    images: ["/og-image.jpg"],
+    images: ["/image/dum.webp"],
   },
-  authors: [{ name: "Roman Howladar", url: "https://roman.dev" }],
+  authors: [{ name: "Roman Howladar", url: "https://roman0190.github.io/portfolio/" }],
 };
 
 export const viewport = {

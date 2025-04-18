@@ -95,7 +95,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
         <div className="flex flex-col flex-grow">
           <p
             className={`text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-1 ${
-              isExpanded ? "" : "line-clamp-4"
+              isExpanded ? "" : "line-clamp-4 km"
             }`}
           >
             {description}

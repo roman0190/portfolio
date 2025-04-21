@@ -43,8 +43,8 @@ const ThemeToggle = () => {
 
   // Icon variants for smoother animation
   const iconVariants = {
-    dark: { opacity: 1, rotate: 0, scale: 1, color: "#f59e0b" },
-    light: { opacity: 1, rotate: 0, scale: 1, color: "#3b82f6" },
+    dark: { opacity: 1, rotate: 0, scale: 0.8, color: "#f59e0b" },
+    light: { opacity: 1, rotate: 0, scale: 0.8, color: "#3b82f6" },
   };
 
   return (

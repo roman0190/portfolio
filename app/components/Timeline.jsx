@@ -73,9 +73,14 @@ const TimelineItem = ({ item, index }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.2 }}
-      className={`flex ${isEven ? "md:flex-row" : "md:flex-row-reverse"} mb-8`}
+      className={`flex flex-col md:flex-row ${
+        isEven ? "md:flex-row" : "md:flex-row-reverse"
+      } mb-12`}
     >
-      <div className="hidden md:flex w-1/2 items-center justify-center"></div>
+      {/* Center alignment for timeline items */}
+      <div className="hidden md:flex w-1/2 items-center justify-center relative">
+        <div className="h-4 w-4 rounded-full bg-blue-500 dark:bg-blue-400 absolute"></div>
+      </div>
       <div className="w-full md:w-1/2 flex">
         <div className="w-full relative">
           <div
@@ -87,7 +92,6 @@ const TimelineItem = ({ item, index }) => {
             >
               {item.icon}
             </div>
-            <div className="absolute -left-3 top-1/2 h-4 w-4 rounded-full bg-blue-500 dark:bg-blue-400"></div>
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-xl font-bold text-gray-800 dark:text-white">
                 {item.title}

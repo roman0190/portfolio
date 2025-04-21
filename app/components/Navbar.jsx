@@ -95,7 +95,7 @@ const Navbar = () => {
         damping: 15,
       }}
     >
-      <div className="flex flex-wrap items-center justify-between mx-auto px-4 sm:px-6 py-2 sm:py-3">
+      <div className="flex items-center justify-between mx-auto px-4 sm:px-6 py-2 sm:py-3">
         <Link
           href={"/"}
           className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white transition-colors"
@@ -116,7 +116,7 @@ const Navbar = () => {
           </motion.span>
         </Link>
 
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex justify-end gap-2 sm:gap-4 w-full px-2">
           <ThemeToggle />
           <div className="md:hidden">
             <motion.button

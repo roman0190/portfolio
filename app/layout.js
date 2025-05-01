@@ -38,7 +38,14 @@ export const metadata = {
     creator: "@roman_howladar",
     images: ["/image/dum.webp"],
   },
-  authors: [{ name: "Roman Howladar", url: "https://roman0190.github.io/portfolio/" }],
+  authors: [
+    { name: "Roman Howladar", url: "https://roman0190.github.io/portfolio/" },
+  ],
+  canonical: "https://roman0190.github.io/portfolio/",
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export const viewport = {

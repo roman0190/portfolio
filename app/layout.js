@@ -7,23 +7,26 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Roman Howladar | Full Stack Developer",
   description:
-    "Roman Howladar is a full-stack developer specializing in modern web technologies including React, Next.js, and Node.js.",
+    "Roman Howladar is a full-stack developer experienced in React, Next.js, and Node.js. Explore projects, skills, and more.",
   keywords: [
     "Roman Howladar",
+    "Full Stack Developer",
     "Web Developer",
-    "Frontend Developer",
-    "React",
-    "Next.js",
+    "React Developer",
+    "Next.js Developer",
+    "Portfolio",
+    "JavaScript",
+    "Node.js",
   ],
   openGraph: {
     title: "Roman Howladar | Full Stack Developer",
     description:
-      "Personal portfolio showcasing projects and skills in web development",
+      "Explore Roman Howladar's portfolio featuring web development projects with React, Next.js, and more.",
     type: "website",
     url: "https://roman0190.github.io/portfolio/",
     images: [
       {
-        url: "/image/dum.webp",
+        url: "https://roman0190.github.io/portfolio/image/dum.webp",
         width: 1200,
         height: 630,
         alt: "Roman Howladar - Full Stack Developer",
@@ -34,14 +37,13 @@ export const metadata = {
     card: "summary_large_image",
     title: "Roman Howladar | Full Stack Developer",
     description:
-      "Personal portfolio showcasing projects and skills in web development",
+      "Web developer portfolio showcasing React, Next.js, and Node.js skills.",
     creator: "@roman_howladar",
     images: ["/image/dum.webp"],
   },
   authors: [
     { name: "Roman Howladar", url: "https://roman0190.github.io/portfolio/" },
   ],
-  canonical: "https://roman0190.github.io/portfolio/",
   robots: {
     index: true,
     follow: true,

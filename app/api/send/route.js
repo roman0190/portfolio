@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend("fe1f3c4a0b2d4c7b8a5e6f3d9e0c1b2a"); // Replace with your actual API key fake hahahah
 
 export async function POST(req, res) {
   try {

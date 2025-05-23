@@ -9,13 +9,9 @@ import SolarSystem from "./components/SolarSystem";
 import { motion, LazyMotion, domAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import CustomCursor from "./components/CustomCursor";
-import InstructionRobot from "./components/InstructionRobot";
 // Import new components
 import AchievementsSection from "./components/AchievementsSection";
 import Timeline from "./components/Timeline";
-import TestimonialsSection from "./components/TestimonialsSection";
-import SkillsCloud from "./components/SkillsCloud";
-import BlogSection from "./components/BlogSection";
 import ChatBot from "./components/ChatBot";
 
 export default function Home() {
@@ -43,7 +39,7 @@ export default function Home() {
         </div>
       ) : (
         <div className="relative">
-          <InstructionRobot />
+          {/* <InstructionRobot /> */}
           <CustomCursor />
           <ChatBot />
           <SolarSystem />

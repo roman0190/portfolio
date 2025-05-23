@@ -2,13 +2,24 @@
 import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Link from "next/link";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaDownload } from "react-icons/fa";
 import { useTheme } from "../contexts/ThemeContext";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
+const ProjectCard = ({
+  imgUrl,
+  title,
+  description,
+  gitUrl,
+  previewUrl,
+  tag,
+}) => {
   const { theme } = useTheme();
   const cardRef = useRef(null);
   const [isExpanded, setIsExpanded] = useState(false);
+
+  // Check if project is a game or mobile app
+  const isGameOrMobile =
+    tag && (tag.includes("Game") || tag.includes("Mobile"));
 
   // 3D tilt effect values
   const x = useMotionValue(0);
@@ -124,13 +135,17 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
-              href={previewUrl}
-              target="_blank"
+              href={isGameOrMobile ? previewUrl : "#"}
+              target={isGameOrMobile ? "_blank" : "_self"}
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-sm sm:text-base text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
-              <span>Live Demo</span>
-              <FaExternalLinkAlt className="text-sm" />
+              <span>{isGameOrMobile ? "Download" : "Live Demo"}</span>
+              {isGameOrMobile ? (
+                <FaDownload className="text-sm" />
+              ) : (
+                <FaExternalLinkAlt className="text-sm" />
+              )}
             </Link>
           </motion.div>
         </div>

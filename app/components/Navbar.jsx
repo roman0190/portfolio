@@ -20,6 +20,10 @@ const navLinks = [
     title: "Contact",
     path: "#contact",
   },
+  {
+    title: "Resume",
+    path: "/resume.pdf",
+  },
 ];
 
 const Navbar = () => {

@@ -5,7 +5,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Roman Howladar | Full Stack Developer",
+  title: "Roman Howladar | Full Stack Developer",   
   description:
     "Roman Howladar is a full-stack developer experienced in React, Next.js, and Node.js. Explore projects, skills, and more.",
   keywords: [

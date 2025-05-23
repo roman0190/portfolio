@@ -27,6 +27,10 @@ const ChatBot = () => {
     lastTopic: null,
     topicHistory: [],
     interactionCount: 0,
+    userPreferences: {},
+    conversationMemory: [],
+    lastResponse: null,
+    sentiment: "neutral",
   });
 
   const predefinedResponses = {
@@ -100,55 +104,127 @@ const ChatBot = () => {
       "I don't have specific information about that yet. Would you like to know about Roman's projects, skills, or how to contact him instead?",
   };
 
+  // Add new utility functions for enhanced intelligence
+  const calculateSentiment = (text) => {
+    const positiveWords = [
+      "good",
+      "great",
+      "awesome",
+      "excellent",
+      "love",
+      "like",
+      "thanks",
+      "thank",
+    ];
+    const negativeWords = [
+      "bad",
+      "poor",
+      "terrible",
+      "hate",
+      "dislike",
+      "wrong",
+      "no",
+      "not",
+    ];
+
+    const words = text.toLowerCase().split(" ");
+    let score = 0;
+
+    words.forEach((word) => {
+      if (positiveWords.includes(word)) score++;
+      if (negativeWords.includes(word)) score--;
+    });
+
+    return score > 0 ? "positive" : score < 0 ? "negative" : "neutral";
+  };
+
+  const findBestMatch = (input, responses) => {
+    const words = input.toLowerCase().split(" ");
+    let bestMatch = null;
+    let bestScore = 0;
+
+    for (const key in responses) {
+      if (key === "default") continue;
+
+      const keyWords = key.split(" ");
+      let score = 0;
+
+      // Calculate word overlap
+      words.forEach((word) => {
+        if (keyWords.includes(word)) score++;
+      });
+
+      // Calculate partial matches
+      words.forEach((word) => {
+        keyWords.forEach((keyWord) => {
+          if (keyWord.includes(word) || word.includes(keyWord)) {
+            score += 0.5;
+          }
+        });
+      });
+
+      // Normalize score
+      score = score / Math.max(words.length, keyWords.length);
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = key;
+      }
+    }
+
+    return bestScore > 0.3 ? bestMatch : "default";
+  };
+
   const generateContextualResponse = (input, context) => {
     const normalizedInput = input.toLowerCase().trim();
-    let response;
+    const sentiment = calculateSentiment(normalizedInput);
 
-    // First check for exact matches
-    if (predefinedResponses[normalizedInput]) {
-      response = predefinedResponses[normalizedInput];
-    } else {
-      // Check for partial matches
-      let bestMatch = null;
-      let bestMatchScore = 0;
+    // Update context with new information
+    const newContext = {
+      ...context,
+      sentiment,
+      lastResponse: context.lastResponse,
+      conversationMemory: [
+        ...context.conversationMemory.slice(-4), // Keep last 5 interactions
+        { input: normalizedInput, sentiment },
+      ],
+    };
 
-      for (const key in predefinedResponses) {
-        if (key === "default") continue;
+    // Find the best matching response
+    const bestMatch = findBestMatch(normalizedInput, predefinedResponses);
+    let response = predefinedResponses[bestMatch];
 
-        if (normalizedInput.includes(key)) {
-          // Calculate a simple relevance score based on the match length vs input length
-          const matchScore = key.length / normalizedInput.length;
-          if (matchScore > bestMatchScore) {
-            bestMatch = key;
-            bestMatchScore = matchScore;
-          }
-        }
-      }
+    // Add contextual follow-ups based on conversation history
+    if (context.conversationMemory.length > 1) {
+      const lastInteraction =
+        context.conversationMemory[context.conversationMemory.length - 2];
 
-      response = bestMatch
-        ? predefinedResponses[bestMatch]
-        : predefinedResponses["default"];
-    }
-
-    // Consider conversation context for more natural responses
-    if (context.interactionCount > 2) {
-      if (context.lastTopic && normalizedInput.length < 10) {
-        // Short follow-up questions likely refer to previous topic
-        if (
-          normalizedInput.includes("more") ||
-          normalizedInput.includes("tell me") ||
-          normalizedInput.includes("what else")
-        ) {
-          if (context.lastTopic === "skills") {
-            return "Roman is continuously learning new technologies. Currently, he's focusing on advanced React patterns, TypeScript best practices, and serverless architectures. Is there a specific technical area you'd like to know about?";
-          } else if (context.lastTopic === "projects") {
-            return "Roman approaches each project with a focus on user experience and clean code. He uses Git for version control and often implements CI/CD pipelines for his larger projects. Would you like to know his development process?";
-          } else if (context.lastTopic === "contact") {
-            return "The best way to reach Roman is through email at romanhowladar841@gmail.com. He typically responds within 24 hours during weekdays.";
-          }
-        }
+      if (lastInteraction && lastInteraction.sentiment === "positive") {
+        response +=
+          " I'm glad I could help! Is there anything else you'd like to know?";
+      } else if (lastInteraction && lastInteraction.sentiment === "negative") {
+        response +=
+          " I apologize if my previous response wasn't helpful. Let me try to be more specific.";
       }
     }
+
+    // Add topic-specific follow-ups
+    if (context.lastTopic) {
+      if (context.lastTopic === "skills" && normalizedInput.includes("more")) {
+        response +=
+          " Would you like to know about any specific technology in more detail?";
+      } else if (
+        context.lastTopic === "projects" &&
+        normalizedInput.includes("more")
+      ) {
+        response +=
+          " I can tell you more about the technical challenges and solutions used in these projects.";
+      }
+    }
+
+    // Update context with new response
+    newContext.lastResponse = response;
+    setConversationContext(newContext);
 
     return response;
   };
@@ -237,37 +313,61 @@ const ChatBot = () => {
   const updateSuggestions = (lastInput) => {
     const lowercaseInput = lastInput.toLowerCase();
     const topic = conversationContext.lastTopic;
+    const sentiment = conversationContext.sentiment;
 
-    // Dynamic suggestions based on detected topic and conversation history
-    if (topic === "projects" || lowercaseInput.includes("project")) {
-      setSuggestions([
+    let newSuggestions = [];
+
+    // Base suggestions on current topic
+    if (topic === "projects") {
+      newSuggestions = [
         "Tell me about EduForge",
         "Other projects?",
         "Tech stack used?",
         "Development process",
-      ]);
-    } else if (topic === "skills" || lowercaseInput.includes("skill")) {
-      setSuggestions([
+      ];
+    } else if (topic === "skills") {
+      newSuggestions = [
         "Frontend skills",
         "Backend skills",
         "Programming languages",
         "Learning now?",
-      ]);
-    } else if (topic === "contact" || lowercaseInput.includes("contact")) {
-      setSuggestions(["Email address", "LinkedIn profile", "GitHub", "Resume"]);
-    } else if (topic === "about" || lowercaseInput.includes("who")) {
-      setSuggestions(["Education", "Experience", "Fun fact", "Hobbies"]);
+      ];
+    } else if (topic === "contact") {
+      newSuggestions = [
+        "Email address",
+        "LinkedIn profile",
+        "GitHub",
+        "Resume",
+      ];
+    } else if (topic === "about") {
+      newSuggestions = ["Education", "Experience", "Fun fact", "Hobbies"];
     } else {
-      // Default or mixed suggestions
-      setSuggestions([
-        "Who is Roman?",
-        conversationContext.interactionCount > 2
-          ? "Tell me a fun fact"
-          : "Skills",
-        conversationContext.interactionCount > 1 ? "Best project?" : "Projects",
-        "Contact info",
-      ]);
+      newSuggestions = ["Who is Roman?", "Skills", "Projects", "Contact info"];
     }
+
+    // Add sentiment-based suggestions
+    if (sentiment === "positive") {
+      newSuggestions.push("Tell me more");
+    } else if (sentiment === "negative") {
+      newSuggestions.push("Can you clarify?");
+    }
+
+    // Add context-aware suggestions based on conversation history
+    if (conversationContext.conversationMemory.length > 2) {
+      const lastTopics = conversationContext.conversationMemory
+        .slice(-3)
+        .map((m) => m.topic)
+        .filter(Boolean);
+
+      if (
+        lastTopics.includes("projects") &&
+        !newSuggestions.includes("Show me the code")
+      ) {
+        newSuggestions.push("Show me the code");
+      }
+    }
+
+    setSuggestions(newSuggestions.slice(0, 4)); // Keep only 4 suggestions
   };
 
   useEffect(() => {

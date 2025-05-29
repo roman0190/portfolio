@@ -1,11 +1,11 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "./contexts/ThemeContext";
-
+import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Roman Howladar | Full Stack Developer",   
+  title: "Roman Howladar | Full Stack Developer",
   description:
     "Roman Howladar is a full-stack developer experienced in React, Next.js, and Node.js. Explore projects, skills, and more.",
   keywords: [
@@ -65,6 +65,12 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="xrRdGAAImZwEJWV3NtTDOa-XYWHC7qU6_M22OmNAYcY"
+        />
+      </Head>
       <body
         className={`${inter.className} bg-white dark:bg-[#121212] text-black dark:text-white transition-colors duration-300 overflow-x-hidden`}
       >
